@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Skansen Game Jam 2025 - 48 godzin na stworzenie gry komputerowej w Sierpcu. 7-9 listopada 2025.">
+    <meta name="description" content="Skansen Game Jam 2025 — 48 godzin na stworzenie gry komputerowej w Sierpcu. 7–9 listopada 2025. Wersja online hostowana na itch.io.">
     <title>Skansen Game Jam 2025 | Sierpc</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
@@ -19,376 +14,171 @@
             background: #0b0f1a;
             overflow-x: hidden;
         }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed; top: 16px; right: 16px; z-index: 50;
+            display: inline-flex; gap: 8px; background: rgba(15,23,42,0.7);
+            border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 6px;
+            backdrop-filter: blur(6px);
         }
-
-        /* Hero Section */
+        .lang-btn {
+            background: transparent; border: 0; color: #e2e8f0; padding: 8px 12px;
+            border-radius: 8px; cursor: pointer; font-weight: 600; transition: all .2s;
+        }
+        .lang-btn[aria-pressed="true"] { background: #60a5fa; color: #0b0f1a; }
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
+            min-height: 100vh; display: flex; align-items: center; position: relative;
             background: linear-gradient(135deg, #0b0f1a 0%, #1e293b 100%);
         }
-
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            content: ''; position: absolute; inset: 0;
             background: radial-gradient(ellipse at center, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .hero-logo {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 2rem;
+        .hero-content { position: relative; z-index: 2; text-align: center; }
+        .hero-logo { max-width: 300px; width: 100%; height: auto; margin-bottom: 2rem;
             filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
         }
-
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 700; margin-bottom: 1rem;
             background: linear-gradient(135deg, #60a5fa, #4ade80);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2;
         }
-
-        @media (max-width: 768px) {
-            .hero-logo {
-                max-width: 250px;
-            }
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-            margin-bottom: 0.5rem;
-            color: #e2e8f0;
-            font-weight: 500;
-        }
-
-        .hero-description {
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            margin: 2rem 0;
-            color: #cbd5e1;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        @media (max-width: 768px) { .hero-logo { max-width: 250px; } }
+        .hero-subtitle { font-size: clamp(1.1rem, 3vw, 1.3rem); margin-bottom: 0.5rem; color: #e2e8f0; font-weight: 500; }
+        .hero-description { font-size: clamp(1rem, 2.5vw, 1.1rem); margin: 2rem auto; color: #cbd5e1; max-width: 600px; }
+        .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
         .cta-button {
-            display: inline-block;
-            padding: 16px 32px;
-            background: #4ade80;
-            color: #0b0f1a;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
-            margin-top: 1rem;
+            display: inline-block; padding: 16px 32px; background: #4ade80; color: #0b0f1a;
+            text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 1.1rem;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3); margin-top: 1rem;
         }
-
-        .cta-button:hover {
-            background: #22c55e;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
-        }
-
-        /* Sections */
-        section {
-            padding: 30px 0;
-        }
-
-        section:nth-child(even) {
-            background: rgba(30, 41, 59, 0.3);
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            color: #60a5fa;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .section-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .section-content p {
-            margin-bottom: 1rem;
-        }
-
-        /* Charity Section */
+        .cta-button:hover { background: #22c55e; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4); }
+        section { padding: 30px 0; }
+        section:nth-of-type(even) { background: rgba(30, 41, 59, 0.3); }
+        .section-title { font-size: clamp(2rem, 5vw, 2.5rem); color: #60a5fa; margin-bottom: 1.5rem; text-align: center; font-weight: 700; }
+        .section-content { font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; }
+        .section-content p { margin-bottom: 1rem; }
         .charity {
             background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(96, 165, 250, 0.1));
-            border: 1px solid rgba(74, 222, 128, 0.2);
-            border-radius: 16px;
-            padding: 25px;
-            margin: 25px 0;
+            border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 25px; margin: 25px 0;
         }
-
         .charity-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            color: #4ade80;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid #4ade80;
-            padding: 12px 24px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            margin: 20px 0;
+            display: inline-flex; align-items: center; gap: 12px; color: #4ade80; text-decoration: none;
+            font-weight: 600; border: 2px solid #4ade80; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease; margin: 20px 0;
         }
-
-        .charity-link:hover {
-            background: rgba(74, 222, 128, 0.1);
-            transform: translateX(4px);
-        }
-
-        .gofundme-widget {
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .gofundme-widget iframe {
-            max-width: 100%;
-            border-radius: 12px;
-        }
-
-        /* Schedule */
-        .schedule-list {
-            list-style: none;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
+        .charity-link:hover { background: rgba(74, 222, 128, 0.1); transform: translateX(4px); }
+        .gofundme-widget { margin: 30px 0; text-align: center; }
+        .gofundme-widget iframe { max-width: 100%; border-radius: 12px; }
+        .schedule-list { list-style: none; max-width: 600px; margin: 0 auto; }
         .schedule-list li {
-            padding: 20px;
-            margin: 16px 0;
-            background: rgba(30, 41, 59, 0.5);
-            border-radius: 12px;
-            border-left: 4px solid #60a5fa;
-            position: relative;
-            transition: all 0.3s ease;
+            padding: 20px; margin: 16px 0; background: rgba(30, 41, 59, 0.5);
+            border-radius: 12px; border-left: 4px solid #60a5fa; position: relative; transition: all 0.3s ease;
         }
-
-        .schedule-list li:hover {
-            background: rgba(30, 41, 59, 0.7);
-            transform: translateX(8px);
-        }
-
-        /* Registration */
+        .schedule-list li:hover { background: rgba(30, 41, 59, 0.7); transform: translateX(8px); }
         .registration {
             background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(74, 222, 128, 0.1));
-            border-radius: 16px;
-            padding: 25px;
-            margin: 25px 0;
+            border-radius: 16px; padding: 25px; margin: 25px 0;
         }
-
         .highlight-note {
-            background: rgba(74, 222, 128, 0.2);
-            border: 1px solid #4ade80;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 30px 0;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.1rem;
+            background: rgba(74, 222, 128, 0.2); border: 1px solid #4ade80; padding: 20px;
+            border-radius: 12px; margin: 30px 0; text-align: center; font-weight: 600; font-size: 1.1rem;
         }
-
-        /* Contact */
-        .contact-info {
-            text-align: center;
-            font-size: 1.1rem;
-        }
-
-        .contact-info p {
-            margin: 12px 0;
-        }
-
-        /* Footer */
-        footer {
-            background: #0f172a;
-            padding: 25px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        footer p {
-            margin: 8px 0;
-            color: #94a3b8;
-        }
-
-        footer a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
+        .contact-info { text-align: center; font-size: 1.1rem; }
+        .contact-info p { margin: 12px 0; }
+        footer { background: #0f172a; padding: 25px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { margin: 8px 0; color: #94a3b8; }
+        footer a { color: #60a5fa; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
         @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-            
-            section {
-                padding: 25px 0;
-            }
-            
-            .charity, .registration {
-                padding: 20px 15px;
-                margin: 20px 0;
-            }
-            
-            .schedule-list li:hover {
-                transform: none;
-            }
+            .container { padding: 0 16px; }
+            section { padding: 25px 0; }
+            .charity, .registration { padding: 20px 15px; margin: 20px 0; }
+            .schedule-list li:hover { transform: none; }
         }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Focus styles for accessibility */
-        .cta-button:focus,
-        .charity-link:focus {
-            outline: 2px solid #4ade80;
-            outline-offset: 2px;
-        }
+        html { scroll-behavior: smooth; }
+        .cta-button:focus, .charity-link:focus, .lang-btn:focus { outline: 2px solid #4ade80; outline-offset: 2px; }
         .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #fff;
-            border-radius: 24px;
+            display: flex; justify-content: center; align-items: center; background: #fff; border-radius: 24px;
             box-shadow: 0 8px 32px rgba(96, 165, 250, 0.10), 0 2px 8px rgba(0,0,0,0.08);
-            padding: 2.5rem 2.5rem 2rem 2.5rem;
-            margin-bottom: 2.5rem;
-            max-width: 340px;
-            margin-left: auto;
-            margin-right: auto;
-            transition: box-shadow 0.3s;
+            padding: 2.5rem 2.5rem 2rem 2.5rem; margin-bottom: 2.5rem; max-width: 340px; margin-left: auto; margin-right: auto; transition: box-shadow 0.3s;
         }
-        .logo-container:hover {
-            box-shadow: 0 16px 48px rgba(96, 165, 250, 0.18), 0 4px 16px rgba(0,0,0,0.12);
-        }
-         .jam-photo-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 2.5rem;
-        }
-        .jam-photo {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(96, 165, 250, 0.13), 0 2px 8px rgba(0,0,0,0.10);
-            margin-bottom: 1.2rem;
-        }
+        .logo-container:hover { box-shadow: 0 16px 48px rgba(96, 165, 250, 0.18), 0 4px 16px rgba(0,0,0,0.12); }
+        .jam-photo-block { display: flex; flex-direction: column; align-items: center; margin-bottom: 2.5rem; }
+        .jam-photo { width: 100%; max-width: 600px; border-radius: 18px; box-shadow: 0 4px 24px rgba(96, 165, 250, 0.13), 0 2px 8px rgba(0,0,0,0.10); margin-bottom: 1.2rem; }
         .jam-photo-desc {
-            background: linear-gradient(90deg, #60a5fa15 0%, #4ade8015 100%);
-            color: #e2e8f0;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            font-size: 1.08rem;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(96, 165, 250, 0.07);
+            background: linear-gradient(90deg, #60a5fa15 0%, #4ade8015 100%); color: #e2e8f0;
+            padding: 1rem 1.5rem; border-radius: 12px; font-size: 1.08rem; text-align: center; box-shadow: 0 2px 8px rgba(96, 165, 250, 0.07);
         }
-        
-        /* Partners Section */
         .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 2rem 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; margin: 2rem 0;
         }
-        
         .partner-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            border-radius: 16px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
+            background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 16px; padding: 25px; text-align: center; transition: all 0.3s ease;
         }
-        
-        .partner-card:hover {
-            background: rgba(30, 41, 59, 0.6);
-            border-color: rgba(96, 165, 250, 0.4);
-            transform: translateY(-5px);
-        }
-        
+        .partner-card:hover { background: rgba(30, 41, 59, 0.6); border-color: rgba(96, 165, 250, 0.4); transform: translateY(-5px); }
         .partner-logo {
-            width: 80px;
-            height: 80px;
-            background: #f8fafc;
-            border-radius: 12px;
-            margin: 0 auto 15px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #64748b;
-            border: 2px solid rgba(96, 165, 250, 0.1);
+            width: 80px; height: 80px; background: #f8fafc; border-radius: 12px; margin: 0 auto 15px auto;
+            display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #64748b; border: 2px solid rgba(96, 165, 250, 0.1);
         }
-        
-        .partner-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #60a5fa;
-            margin-bottom: 10px;
-        }
-        
-        .partner-description {
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            line-height: 1.5;
-        }
+        .partner-name { font-size: 1.2rem; font-weight: 600; color: #60a5fa; margin-bottom: 10px; }
+        .partner-description { font-size: 0.95rem; color: #cbd5e1; line-height: 1.5; }
+        /* Language visibility */
+        [data-lang]{ display:none; }
+        [data-lang="pl"]{ display:block; }
     </style>
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher" role="group" aria-label="Language switcher">
+        <button class="lang-btn" data-switch-to="pl" aria-pressed="true">PL</button>
+        <button class="lang-btn" data-switch-to="en" aria-pressed="false">EN</button>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="logo-container">
-                    <img src="logo.png" alt="Skansen Sierpc Game Jam - logo z tradycyjnym wzorem ludowym" class="hero-logo">
+                    <img src="logo.png" alt="Logo Skansen Game Jam" class="hero-logo">
                 </div>
-        
+
                 <h1>Skansen Game Jam 2025</h1>
-                <div class="hero-subtitle">7–9 listopada 2025 • Sierpc i online</div>
-                <div class="hero-subtitle">48 godzin na stworzenie gry komputerowej</div>
-                <p class="hero-description">W tym roku gramy charytatywnie – całe wpisowe przeznaczamy na wsparcie zbiórki dla Łukasza.</p>
-                <div class="gfm-embed" data-url="https://www.gofundme.com/f/a-daddy-fighting-for-the-most-precious-gift-time/widget/medium?sharesheet=undefined&attribution_id=sl:b18812c4-98e9-4119-9390-b563673f5936"></div><script defer src="https://www.gofundme.com/static/js/embed.js"></script>
-                <a href="#zapisy" class="cta-button" aria-label="Przejdź do sekcji zapisów">Zapisz się</a>
+
+                <!-- PL -->
+                <div data-lang="pl">
+                    <div class="hero-subtitle">7–9 listopada 2025 • Sierpc + online</div>
+                    <div class="hero-subtitle">48 godzin na stworzenie gry</div>
+                    <p class="hero-description">
+                        W tym roku gramy charytatywnie — całe wpisowe przeznaczamy na wsparcie zbiórki dla Łukasza.
+                        Wersja online jest hostowana na <strong>itch.io</strong>.
+                    </p>
+                    <div class="gfm-embed" data-url="https://www.gofundme.com/f/a-daddy-fighting-for-the-most-precious-gift-time/widget/medium?sharesheet=undefined&attribution_id=sl:b18812c4-98e9-4119-9390-b563673f5936"></div>
+                    <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+                    <div class="cta-row">
+                        <a href="#zapisy" class="cta-button" aria-label="Przejdź do sekcji zapisów">Zgłoś się</a>
+                        <a href="https://itch.io/jam/skansen-game-jam-2025" target="_blank" rel="noopener" class="cta-button" style="background:#60a5fa;" aria-label="Otwórz stronę jamu na itch.io w nowej karcie">Wersja online (itch.io)</a>
+                    </div>
+                </div>
+
+                <!-- EN -->
+                <div data-lang="en">
+                    <div class="hero-subtitle">7–9 November 2025 • Sierpc + online</div>
+                    <div class="hero-subtitle">48 hours to make a game</div>
+                    <p class="hero-description">
+                        This year we jam for charity — all entry fees support Łukasz’s fundraiser.
+                        The online edition is hosted on <strong>itch.io</strong>.
+                    </p>
+                    <div class="gfm-embed" data-url="https://www.gofundme.com/f/a-daddy-fighting-for-the-most-precious-gift-time/widget/medium?sharesheet=undefined&attribution_id=sl:b18812c4-98e9-4119-9390-b563673f5936"></div>
+                    <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+                    <div class="cta-row">
+                        <a href="#registration" class="cta-button" aria-label="Jump to registration section">Register</a>
+                        <a href="https://itch.io/jam/skansen-game-jam-2025" target="_blank" rel="noopener" class="cta-button" style="background:#60a5fa;" aria-label="Open itch.io jam page in a new tab">Online edition (itch.io)</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -396,54 +186,112 @@
     <!-- About Section -->
     <section id="o-wydarzeniu">
         <div class="container">
-            <h2 class="section-title">Czym jest Game Jam?</h2>
-            <div class="section-content">
+            <h2 class="section-title" data-lang="pl">Czym jest Game Jam?</h2>
+            <h2 class="section-title" data-lang="en">What is a Game Jam?</h2>
+
+            <div class="section-content" data-lang="pl">
                 <div class="jam-photo-block">
-                    <img src="IMG_1331.jpg" alt="Prezentacja Game Jam Sierpc" class="jam-photo">
+                    <img src="IMG_1331.jpg" alt="Prezentacja w trakcie finału" class="jam-photo">
                     <div class="jam-photo-desc">
-                        <strong>To już 4. edycja!</strong> Game Jam w Sierpcu to wydarzenie, które na stałe wpisało się w kalendarz lokalnych pasjonatów gier. Każdego roku spotykamy się, by wspólnie tworzyć gry, dzielić się wiedzą i inspirować.
+                        <strong>To już 4. edycja!</strong> Spotykamy się, by tworzyć gry, dzielić się wiedzą i inspirować.
                     </div>
                 </div>
-
                 <div class="jam-photo-block">
-                    <img src="1.jpg" alt="Uczestnicy Game Jam podczas pracy nad grami" class="jam-photo">
-                    <div class="jam-photo-desc">
-                        Atmosfera tworzenia i koncentracji - uczestnicy pochłonięci pracą nad swoimi projektami podczas jednej z poprzednich edycji.
-                    </div>
+                    <img src="1.jpg" alt="Zespół pracujący nad grą" class="jam-photo">
+                    <div class="jam-photo-desc">Koncentracja i flow — praca nad prototypami.</div>
+                </div>
+                <div class="jam-photo-block">
+                    <img src="2.jpg" alt="Prezentacje projektów po 48 godzinach" class="jam-photo">
+                    <div class="jam-photo-desc">Finał: prezentacje projektów po 48 godzinach pracy.</div>
+                </div>
+                <div class="jam-photo-block">
+                    <img src="3.jpg" alt="Skansen w Sierpcu — miejsce wydarzenia" class="jam-photo">
+                    <div class="jam-photo-desc"><strong>Serce Mazowsza — Skansen w Sierpcu</strong>. Miejsce, gdzie tradycja spotyka nowe technologie.</div>
                 </div>
 
+                <p><strong>Game jam</strong> to 48-godzinny maraton tworzenia gier. Temat poznajesz na starcie, a potem — solo lub w zespole — projektujesz rozgrywkę, programujesz, tworzysz grafikę i dźwięk. Liczą się kreatywność, współpraca i eksperymenty. Nagrody są symboliczne, za to doświadczenie i portfolio — bezcenne.</p>
+                <p><strong>Skansen Game Jam</strong> odbywa się w Sierpcu (z opcją online). Gospodarzem jest Muzeum Wsi Mazowieckiej. W 2025 roku gramy także <strong>charytatywnie</strong> — całe wpisowe dla Łukasza.</p>
+            </div>
+
+            <div class="section-content" data-lang="en">
                 <div class="jam-photo-block">
-                    <img src="2.jpg" alt="Prezentacje gier podczas Game Jam" class="jam-photo">
+                    <img src="IMG_1331.jpg" alt="Project presentation during finals" class="jam-photo">
                     <div class="jam-photo-desc">
-                        Finałowe prezentacje - moment, w którym wszystkie zespoły pokazują efekty swojej 48-godzinnej pracy.
+                        <strong>4th edition!</strong> We meet to create games, share knowledge, and inspire each other.
                     </div>
                 </div>
-
                 <div class="jam-photo-block">
-                    <img src="3.jpg" alt="Skansen w Sierpcu - serce Mazowsza" class="jam-photo">
-                    <div class="jam-photo-desc">
-                        <strong>Serce Mazowsza – Skansen w Sierpcu</strong><br>To tutaj, w nowoczesnych przestrzeniach Muzeum Wsi Mazowieckiej, odbywa się nasz Game Jam. Połączenie tradycji i innowacji tworzy wyjątkowy klimat do kreatywnej pracy.
-                    </div>
+                    <img src="1.jpg" alt="Team working on a game" class="jam-photo">
+                    <div class="jam-photo-desc">Focus and flow — prototyping in action.</div>
+                </div>
+                <div class="jam-photo-block">
+                    <img src="2.jpg" alt="Showcase after 48 hours" class="jam-photo">
+                    <div class="jam-photo-desc">Finale: project demos after 48 hours of work.</div>
+                </div>
+                <div class="jam-photo-block">
+                    <img src="3.jpg" alt="Open-air museum in Sierpc — venue" class="jam-photo">
+                    <div class="jam-photo-desc"><strong>Heart of Mazovia — Sierpc open-air museum</strong>. Where tradition meets new tech.</div>
                 </div>
 
-                <p>Game Jam to maraton tworzenia gier komputerowych. Uczestnicy spotykają się na miejscu (lub online), poznają temat dopiero na starcie i mają 48 godzin, aby od zera stworzyć własną grę. To nie tylko programowanie – to także grafika, muzyka i pomysł na rozgrywkę.</p>
-                <p>W Sierpcu organizujemy to wydarzenie już po raz czwarty, w wyjątkowej przestrzeni Muzeum Wsi Mazowieckiej. Najważniejsze są: kreatywność, współpraca i dobra zabawa – nagrody są symboliczne, ale doświadczenie bezcenne.</p>
+                <p>A <strong>game jam</strong> is a 48-hour sprint to make a game. The theme is revealed at kickoff; then you design, code, and create art and audio — solo or in a team. It’s all about creativity, collaboration, and experimentation. Prizes are symbolic; the experience and portfolio are priceless.</p>
+                <p><strong>Skansen Game Jam</strong> takes place in Sierpc (with an online option). Our host is the Museum of the Mazovian Countryside. In 2025 we also jam <strong>for charity</strong> — all fees support Łukasz.</p>
             </div>
         </div>
-       
+    </section>
+
+    <!-- History Section -->
+    <section id="historia">
+        <div class="container">
+            <h2 class="section-title" data-lang="pl">Historia Skansen Game Jam</h2>
+            <h2 class="section-title" data-lang="en">Skansen Game Jam — History</h2>
+
+            <div class="section-content" data-lang="pl">
+                <p><strong>Skansen Game Jam</strong> narodził się z lokalnej pasji do gier i edukacji technologicznej. Z każdą edycją rośniemy — przybywa osób, projektów i partnerów.</p>
+                <ul class="schedule-list" style="max-width:800px;">
+                    <li><strong>Edycja 1</strong> — start inicjatywy, pierwsze zespoły i premierowe tytuły powstałe w Skansenie.</li>
+                    <li><strong>Edycja 2</strong> — dołącza udział online, więcej konsultacji mentorskich i prezentacji finałowych.</li>
+                    <li><strong>Edycja 3</strong> — rozbudowany program towarzyszący i rekordowa liczba zgłoszeń.</li>
+                    <li><strong>Edycja 4 (2025)</strong> — 48 godzin tworzenia oraz cel charytatywny dla Łukasza.</li>
+                </ul>
+                <p style="color:#cbd5e1">Docelowo dodaj liczby: uczestnicy [×], zespoły [×], gier [×], partnerzy [×].</p>
+            </div>
+
+            <div class="section-content" data-lang="en">
+                <p><strong>Skansen Game Jam</strong> was born from a local passion for games and tech education. Each year we grow — more people, projects, and partners.</p>
+                <ul class="schedule-list" style="max-width:800px;">
+                    <li><strong>Edition 1</strong> — the kick-off, first teams, and debut titles made at the museum.</li>
+                    <li><strong>Edition 2</strong> — online participation joins in; more mentoring and final showcases.</li>
+                    <li><strong>Edition 3</strong> — expanded side program and record number of submissions.</li>
+                    <li><strong>Edition 4 (2025)</strong> — 48 hours of creation plus a charity goal for Łukasz.</li>
+                </ul>
+                <p style="color:#cbd5e1">Later, add numbers: participants [×], teams [×], games [×], partners [×].</p>
+            </div>
+        </div>
     </section>
 
     <!-- Charity Section -->
     <section id="cel-charytatywny">
         <div class="container">
-            <h2 class="section-title">Gramy dla Łukasza</h2>
+            <h2 class="section-title" data-lang="pl">Gramy dla Łukasza</h2>
+            <h2 class="section-title" data-lang="en">We Jam for Łukasz</h2>
+
             <div class="section-content">
-                <div class="charity">
-                    <p>W tym roku łączymy pasję z pomocą. Całość wpisowego zostanie przekazana na zbiórkę dla naszego kolegi-programisty Łukasza, który zmaga się z ciężką chorobą. Twoje uczestnictwo to realne wsparcie.</p>
+                <div class="charity" data-lang="pl">
+                    <p>Łączymy pasję z pomocą. Całość wpisowego zostanie przekazana na zbiórkę dla naszego kolegi-programisty Łukasza. Twoje uczestnictwo to realne wsparcie.</p>
                     <a href="https://www.gofundme.com/f/a-daddy-fighting-for-the-most-precious-gift-time?lang=en_US" class="charity-link" target="_blank" rel="noopener" aria-label="Otwórz zbiórkę GoFundMe dla Łukasza w nowej karcie">
                         <span>Przejdź do zbiórki na GoFundMe →</span>
                     </a>
-                    <div class="gofundme-widget" style="margin: 30px 0; text-align: center;">
+                    <div class="gofundme-widget">
+                        <div class="gfm-embed" data-url="https://www.gofundme.com/f/a-daddy-fighting-for-the-most-precious-gift-time/widget/large?sharesheet=undefined&attribution_id=sl:b18812c4-98e9-4119-9390-b563673f5936"></div>
+                    </div>
+                </div>
+
+                <div class="charity" data-lang="en">
+                    <p>We combine passion with support. All entry fees go to our friend Łukasz, a fellow programmer. Your participation makes a real difference.</p>
+                    <a href="https://www.gofundme.com/f/a-daddy-fighting-for-the-most-precious-gift-time?lang=en_US" class="charity-link" target="_blank" rel="noopener" aria-label="Open GoFundMe fundraiser for Łukasz in a new tab">
+                        <span>Go to the GoFundMe page →</span>
+                    </a>
+                    <div class="gofundme-widget">
                         <div class="gfm-embed" data-url="https://www.gofundme.com/f/a-daddy-fighting-for-the-most-precious-gift-time/widget/large?sharesheet=undefined&attribution_id=sl:b18812c4-98e9-4119-9390-b563673f5936"></div>
                     </div>
                 </div>
@@ -454,12 +302,21 @@
     <!-- Schedule Section -->
     <section id="harmonogram">
         <div class="container">
-            <h2 class="section-title">Harmonogram w skrócie</h2>
-            <div class="section-content">
+            <h2 class="section-title" data-lang="pl">Harmonogram w skrócie</h2>
+            <h2 class="section-title" data-lang="en">Schedule at a Glance</h2>
+
+            <div class="section-content" data-lang="pl">
                 <ul class="schedule-list">
-                    <li>7 listopada 2025 (piątek, godz. 18:00) – otwarcie, ogłoszenie tematu i start prac nad grami.</li>
-                    <li>7–9 listopada 2025 – 48 godzin tworzenia gier (kod, grafika, muzyka).</li>
-                    <li>9 listopada 2025 (niedziela, godz. 18:00) – finał, prezentacje i ogłoszenie wyników.</li>
+                    <li>7 listopada 2025 (piątek, 18:00) — otwarcie, ogłoszenie tematu i start prac.</li>
+                    <li>7–9 listopada 2025 — 48 godzin tworzenia gier (kod, grafika, muzyka).</li>
+                    <li>9 listopada 2025 (niedziela, 18:00) — finał, prezentacje i ogłoszenie wyników.</li>
+                </ul>
+            </div>
+            <div class="section-content" data-lang="en">
+                <ul class="schedule-list">
+                    <li>7 Nov 2025 (Fri, 18:00) — opening, theme reveal, and start.</li>
+                    <li>7–9 Nov 2025 — 48 hours of making games (code, art, audio).</li>
+                    <li>9 Nov 2025 (Sun, 18:00) — finale, demos, and results.</li>
                 </ul>
             </div>
         </div>
@@ -468,18 +325,36 @@
     <!-- Registration Section -->
     <section id="zapisy">
         <div class="container">
-            <h2 class="section-title">Zapisy i udział</h2>
+            <h2 class="section-title" data-lang="pl">Zapisy i udział</h2>
+            <h2 class="section-title" data-lang="en" id="registration">Registration & Participation</h2>
+
             <div class="section-content">
-                <div class="registration">
+                <div class="registration" data-lang="pl">
                     <ul style="list-style: none; padding: 0;">
-                        <li style="margin: 16px 0; padding: 0;">• Liczba miejsc ograniczona: maksymalnie 15 osób (udział stacjonarny).</li>
-                        <li style="margin: 16px 0; padding: 0;">• Możliwość udziału online – bez ograniczeń.</li>
-                        <li style="margin: 16px 0; padding: 0;">• Wymagania (na miejscu): od 4 klasy SP do matury, własny komputer.</li>
-                        <li style="margin: 16px 0; padding: 0;">• Udział jest płatny – wysokość wpisowego podamy wkrótce, a całość zasili zbiórkę dla Łukasza.</li>
+                        <li style="margin: 16px 0;">• Udział stacjonarny: maks. 15 osób (Sierpc).</li>
+                        <li style="margin: 16px 0;">• Udział online: bez limitu — <strong>hostowany na itch.io</strong>.</li>
+                        <li style="margin: 16px 0;">• Wymagania (na miejscu): od 4 klasy SP do matury, własny komputer.</li>
+                        <li style="margin: 16px 0;">• Wpisowe: kwota wkrótce — całość zasili zbiórkę dla Łukasza.</li>
                     </ul>
-                    <div class="highlight-note">
-                        Formularz zgłoszeniowy Google będzie dostępny wkrótce – śledź stronę!
+                    <div class="cta-row">
+                        <a href="#" class="cta-button" aria-label="Formularz zgłoszeniowy (wkrótce)" onclick="event.preventDefault(); alert('Formularz będzie dostępny wkrótce.');">Formularz (wkrótce)</a>
+                        <a href="https://itch.io/jam/skansen-game-jam-2025" target="_blank" rel="noopener" class="cta-button" style="background:#60a5fa;" aria-label="Otwórz stronę jamu online na itch.io w nowej karcie">Dołącz online (itch.io)</a>
                     </div>
+                    <div class="highlight-note">Formularz zgłoszeniowy Google będzie dostępny wkrótce — śledź stronę!</div>
+                </div>
+
+                <div class="registration" data-lang="en">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 16px 0;">• On-site participation: up to 15 people (Sierpc).</li>
+                        <li style="margin: 16px 0;">• Online participation: no limit — <strong>hosted on itch.io</strong>.</li>
+                        <li style="margin: 16px 0;">• On-site requirements: primary school grade 4 to high school, bring your own laptop.</li>
+                        <li style="margin: 16px 0;">• Entry fee: amount coming soon — all proceeds go to Łukasz.</li>
+                    </ul>
+                    <div class="cta-row">
+                        <a href="#" class="cta-button" aria-label="Registration form (coming soon)" onclick="event.preventDefault(); alert('The form will be available soon.');">Registration (soon)</a>
+                        <a href="https://itch.io/jam/skansen-game-jam-2025" target="_blank" rel="noopener" class="cta-button" style="background:#60a5fa;" aria-label="Open online jam page on itch.io in a new tab">Join online (itch.io)</a>
+                    </div>
+                    <div class="highlight-note">Google registration form will be available soon — stay tuned!</div>
                 </div>
             </div>
         </div>
@@ -488,43 +363,73 @@
     <!-- Partners Section -->
     <section id="partnerzy">
         <div class="container">
-            <h2 class="section-title">Partnerzy</h2>
+            <h2 class="section-title" data-lang="pl">Partnerzy</h2>
+            <h2 class="section-title" data-lang="en">Partners</h2>
+
             <div class="section-content">
-                <div class="partners-grid">
+                <div class="partners-grid" data-lang="pl">
                     <div class="partner-card">
                         <div class="partner-logo">🏛️</div>
                         <div class="partner-name">Muzeum Wsi Mazowieckiej</div>
-                        <div class="partner-description">Gospodarz wydarzenia - zapewnia wyjątkową przestrzeń w sercu Sierpca, łącząc tradycję z nowoczesnością.</div>
+                        <div class="partner-description">Gospodarz wydarzenia — wyjątkowa przestrzeń w sercu Sierpca.</div>
                     </div>
-                    
                     <div class="partner-card">
                         <div class="partner-logo">🏢</div>
-                        <div class="partner-name">Partner Technologiczny</div>
-                        <div class="partner-description">Wsparcie techniczne, narzędzia programistyczne i infrastruktura niezbędna do realizacji projektu.</div>
+                        <div class="partner-name">Partner technologiczny</div>
+                        <div class="partner-description">Wsparcie narzędziowe i infrastruktura.</div>
                     </div>
-                    
                     <div class="partner-card">
                         <div class="partner-logo">🎮</div>
-                        <div class="partner-name">Społeczność Gamedev</div>
-                        <div class="partner-description">Lokalna społeczność twórców gier, która wspiera wydarzenie swoją wiedzą i doświadczeniem.</div>
+                        <div class="partner-name">Społeczność gamedev</div>
+                        <div class="partner-description">Mentoring i doświadczenie lokalnych twórców.</div>
                     </div>
-                    
                     <div class="partner-card">
                         <div class="partner-logo">🏆</div>
-                        <div class="partner-name">Sponsor Nagród</div>
-                        <div class="partner-description">Zapewnia nagrody dla zwycięzców oraz materiały promocyjne dla wszystkich uczestników.</div>
+                        <div class="partner-name">Sponsor nagród</div>
+                        <div class="partner-description">Nagrody i materiały promocyjne.</div>
                     </div>
-                    
                     <div class="partner-card">
                         <div class="partner-logo">🍕</div>
-                        <div class="partner-name">Partner Gastronomiczny</div>
-                        <div class="partner-description">Dba o to, żeby uczestnicy byli najedzeni podczas intensywnych 48 godzin tworzenia gier.</div>
+                        <div class="partner-name">Partner gastronomiczny</div>
+                        <div class="partner-description">Energia na 48 godzin tworzenia.</div>
                     </div>
-                    
                     <div class="partner-card">
                         <div class="partner-logo">📢</div>
-                        <div class="partner-name">Partner Medialny</div>
-                        <div class="partner-description">Promuje wydarzenie w mediach lokalnych i społecznościowych, zwiększając jego zasięg.</div>
+                        <div class="partner-name">Partner medialny</div>
+                        <div class="partner-description">Promocja w mediach lokalnych i społecznościowych.</div>
+                    </div>
+                </div>
+
+                <div class="partners-grid" data-lang="en">
+                    <div class="partner-card">
+                        <div class="partner-logo">🏛️</div>
+                        <div class="partner-name">Museum of the Mazovian Countryside</div>
+                        <div class="partner-description">Event host — a unique venue in the heart of Sierpc.</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">🏢</div>
+                        <div class="partner-name">Technology Partner</div>
+                        <div class="partner-description">Tooling and infrastructure support.</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">🎮</div>
+                        <div class="partner-name">Gamedev Community</div>
+                        <div class="partner-description">Mentoring and hands-on experience.</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">🏆</div>
+                        <div class="partner-name">Prize Sponsor</div>
+                        <div class="partner-description">Awards and promo materials.</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">🍕</div>
+                        <div class="partner-name">Food Partner</div>
+                        <div class="partner-description">Fuel for 48 hours of creation.</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">📢</div>
+                        <div class="partner-name">Media Partner</div>
+                        <div class="partner-description">Local and social media coverage.</div>
                     </div>
                 </div>
             </div>
@@ -534,12 +439,19 @@
     <!-- Contact Section -->
     <section id="kontakt">
         <div class="container">
-            <h2 class="section-title">Kontakt</h2>
+            <h2 class="section-title" data-lang="pl">Kontakt</h2>
+            <h2 class="section-title" data-lang="en">Contact</h2>
+
             <div class="section-content">
-                <div class="contact-info">
+                <div class="contact-info" data-lang="pl">
                     <p><strong>Organizator:</strong> Piotr Dul</p>
-                    <p><strong>E-mail:</strong> tu_wstaw_swoj_mail@example.com</p>
-                    <p><strong>Telefon:</strong> tu_wstaw_numer</p>
+                    <p><strong>E-mail:</strong> kontakt@twojadomena.pl</p>
+                    <p><strong>Telefon:</strong> +48 000 000 000</p>
+                </div>
+                <div class="contact-info" data-lang="en">
+                    <p><strong>Organizer:</strong> Piotr Dul</p>
+                    <p><strong>E-mail:</strong> contact@yourdomain.com</p>
+                    <p><strong>Phone:</strong> +48 000 000 000</p>
                 </div>
             </div>
         </div>
@@ -548,11 +460,39 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>Skansen Game Jam 2025 • Muzeum Wsi Mazowieckiej w Sierpcu • 7–9 listopada 2025</p>
-            <p><a href="#" aria-label="Pobierz regulamin w formacie PDF">Regulamin (PDF) – wkrótce</a></p>
+            <p data-lang="pl">Skansen Game Jam 2025 • Muzeum Wsi Mazowieckiej w Sierpcu • 7–9 listopada 2025</p>
+            <p data-lang="en">Skansen Game Jam 2025 • Museum of the Mazovian Countryside, Sierpc • 7–9 November 2025</p>
+            <p><a href="#" aria-label="Pobierz regulamin w formacie PDF" data-lang="pl">Regulamin (PDF) — wkrótce</a></p>
+            <p><a href="#" aria-label="Download the rules PDF" data-lang="en">Rules (PDF) — coming soon</a></p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+    <script>
+        (function(){
+            const html = document.documentElement;
+            const btns = document.querySelectorAll('.lang-btn');
+            function setLang(lang){
+                html.setAttribute('lang', lang);
+                document.querySelectorAll('[data-lang]').forEach(el=>{
+                    el.style.display = (el.getAttribute('data-lang') === lang) ? (el.tagName==='H2'?'block':'') : 'none';
+                });
+                btns.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.switchTo===lang)));
+                // Update meta description/title if needed
+                const meta = document.querySelector('meta[name="description"]');
+                if(meta){
+                    meta.setAttribute('content',
+                        lang==='pl'
+                          ? 'Skansen Game Jam 2025 — 48 godzin na stworzenie gry komputerowej w Sierpcu. 7–9 listopada 2025. Wersja online hostowana na itch.io.'
+                          : 'Skansen Game Jam 2025 — a 48-hour game creation marathon in Sierpc, Poland. 7–9 November 2025. Online edition hosted on itch.io.'
+                    );
+                }
+                document.title = lang==='pl' ? 'Skansen Game Jam 2025 | Sierpc' : 'Skansen Game Jam 2025 | Sierpc (EN)';
+            }
+            btns.forEach(b=>b.addEventListener('click', ()=>setLang(b.dataset.switchTo)));
+            setLang('pl'); // default
+        })();
+    </script>
 </body>
 </html>
