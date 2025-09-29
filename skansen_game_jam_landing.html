@@ -115,7 +115,7 @@
 
         /* Sections */
         section {
-            padding: 80px 0;
+            padding: 30px 0;
         }
 
         section:nth-child(even) {
@@ -125,7 +125,7 @@
         .section-title {
             font-size: clamp(2rem, 5vw, 2.5rem);
             color: #60a5fa;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-align: center;
             font-weight: 700;
         }
@@ -138,7 +138,7 @@
         }
 
         .section-content p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         /* Charity Section */
@@ -146,8 +146,8 @@
             background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(96, 165, 250, 0.1));
             border: 1px solid rgba(74, 222, 128, 0.2);
             border-radius: 16px;
-            padding: 40px;
-            margin: 40px 0;
+            padding: 25px;
+            margin: 25px 0;
         }
 
         .charity-link {
@@ -205,8 +205,8 @@
         .registration {
             background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(74, 222, 128, 0.1));
             border-radius: 16px;
-            padding: 40px;
-            margin: 40px 0;
+            padding: 25px;
+            margin: 25px 0;
         }
 
         .highlight-note {
@@ -233,7 +233,7 @@
         /* Footer */
         footer {
             background: #0f172a;
-            padding: 40px 0;
+            padding: 25px 0;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -259,12 +259,12 @@
             }
             
             section {
-                padding: 60px 0;
+                padding: 25px 0;
             }
             
             .charity, .registration {
-                padding: 30px 20px;
-                margin: 30px 0;
+                padding: 20px 15px;
+                margin: 20px 0;
             }
             
             .schedule-list li:hover {
@@ -283,6 +283,95 @@
             outline: 2px solid #4ade80;
             outline-offset: 2px;
         }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(96, 165, 250, 0.10), 0 2px 8px rgba(0,0,0,0.08);
+            padding: 2.5rem 2.5rem 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: box-shadow 0.3s;
+        }
+        .logo-container:hover {
+            box-shadow: 0 16px 48px rgba(96, 165, 250, 0.18), 0 4px 16px rgba(0,0,0,0.12);
+        }
+         .jam-photo-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+        .jam-photo {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(96, 165, 250, 0.13), 0 2px 8px rgba(0,0,0,0.10);
+            margin-bottom: 1.2rem;
+        }
+        .jam-photo-desc {
+            background: linear-gradient(90deg, #60a5fa15 0%, #4ade8015 100%);
+            color: #e2e8f0;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-size: 1.08rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(96, 165, 250, 0.07);
+        }
+        
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 2rem 0;
+        }
+        
+        .partner-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-card:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(96, 165, 250, 0.4);
+            transform: translateY(-5px);
+        }
+        
+        .partner-logo {
+            width: 80px;
+            height: 80px;
+            background: #f8fafc;
+            border-radius: 12px;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #64748b;
+            border: 2px solid rgba(96, 165, 250, 0.1);
+        }
+        
+        .partner-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 10px;
+        }
+        
+        .partner-description {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -290,11 +379,15 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <img src="logo.png" alt="Skansen Sierpc Game Jam - logo z tradycyjnym wzorem ludowym" class="hero-logo">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Skansen Sierpc Game Jam - logo z tradycyjnym wzorem ludowym" class="hero-logo">
+                </div>
+        
                 <h1>Skansen Game Jam 2025</h1>
                 <div class="hero-subtitle">7–9 listopada 2025 • Sierpc i online</div>
                 <div class="hero-subtitle">48 godzin na stworzenie gry komputerowej</div>
                 <p class="hero-description">W tym roku gramy charytatywnie – całe wpisowe przeznaczamy na wsparcie zbiórki dla Łukasza.</p>
+                <div class="gfm-embed" data-url="https://www.gofundme.com/f/a-daddy-fighting-for-the-most-precious-gift-time/widget/medium?sharesheet=undefined&attribution_id=sl:b18812c4-98e9-4119-9390-b563673f5936"></div><script defer src="https://www.gofundme.com/static/js/embed.js"></script>
                 <a href="#zapisy" class="cta-button" aria-label="Przejdź do sekcji zapisów">Zapisz się</a>
             </div>
         </div>
@@ -305,10 +398,39 @@
         <div class="container">
             <h2 class="section-title">Czym jest Game Jam?</h2>
             <div class="section-content">
+                <div class="jam-photo-block">
+                    <img src="IMG_1331.jpg" alt="Prezentacja Game Jam Sierpc" class="jam-photo">
+                    <div class="jam-photo-desc">
+                        <strong>To już 4. edycja!</strong> Game Jam w Sierpcu to wydarzenie, które na stałe wpisało się w kalendarz lokalnych pasjonatów gier. Każdego roku spotykamy się, by wspólnie tworzyć gry, dzielić się wiedzą i inspirować.
+                    </div>
+                </div>
+
+                <div class="jam-photo-block">
+                    <img src="1.jpg" alt="Uczestnicy Game Jam podczas pracy nad grami" class="jam-photo">
+                    <div class="jam-photo-desc">
+                        Atmosfera tworzenia i koncentracji - uczestnicy pochłonięci pracą nad swoimi projektami podczas jednej z poprzednich edycji.
+                    </div>
+                </div>
+
+                <div class="jam-photo-block">
+                    <img src="2.jpg" alt="Prezentacje gier podczas Game Jam" class="jam-photo">
+                    <div class="jam-photo-desc">
+                        Finałowe prezentacje - moment, w którym wszystkie zespoły pokazują efekty swojej 48-godzinnej pracy.
+                    </div>
+                </div>
+
+                <div class="jam-photo-block">
+                    <img src="3.jpg" alt="Skansen w Sierpcu - serce Mazowsza" class="jam-photo">
+                    <div class="jam-photo-desc">
+                        <strong>Serce Mazowsza – Skansen w Sierpcu</strong><br>To tutaj, w nowoczesnych przestrzeniach Muzeum Wsi Mazowieckiej, odbywa się nasz Game Jam. Połączenie tradycji i innowacji tworzy wyjątkowy klimat do kreatywnej pracy.
+                    </div>
+                </div>
+
                 <p>Game Jam to maraton tworzenia gier komputerowych. Uczestnicy spotykają się na miejscu (lub online), poznają temat dopiero na starcie i mają 48 godzin, aby od zera stworzyć własną grę. To nie tylko programowanie – to także grafika, muzyka i pomysł na rozgrywkę.</p>
                 <p>W Sierpcu organizujemy to wydarzenie już po raz czwarty, w wyjątkowej przestrzeni Muzeum Wsi Mazowieckiej. Najważniejsze są: kreatywność, współpraca i dobra zabawa – nagrody są symboliczne, ale doświadczenie bezcenne.</p>
             </div>
         </div>
+       
     </section>
 
     <!-- Charity Section -->
@@ -357,6 +479,52 @@
                     </ul>
                     <div class="highlight-note">
                         Formularz zgłoszeniowy Google będzie dostępny wkrótce – śledź stronę!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partnerzy">
+        <div class="container">
+            <h2 class="section-title">Partnerzy</h2>
+            <div class="section-content">
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">🏛️</div>
+                        <div class="partner-name">Muzeum Wsi Mazowieckiej</div>
+                        <div class="partner-description">Gospodarz wydarzenia - zapewnia wyjątkową przestrzeń w sercu Sierpca, łącząc tradycję z nowoczesnością.</div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">🏢</div>
+                        <div class="partner-name">Partner Technologiczny</div>
+                        <div class="partner-description">Wsparcie techniczne, narzędzia programistyczne i infrastruktura niezbędna do realizacji projektu.</div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">🎮</div>
+                        <div class="partner-name">Społeczność Gamedev</div>
+                        <div class="partner-description">Lokalna społeczność twórców gier, która wspiera wydarzenie swoją wiedzą i doświadczeniem.</div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">🏆</div>
+                        <div class="partner-name">Sponsor Nagród</div>
+                        <div class="partner-description">Zapewnia nagrody dla zwycięzców oraz materiały promocyjne dla wszystkich uczestników.</div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">🍕</div>
+                        <div class="partner-name">Partner Gastronomiczny</div>
+                        <div class="partner-description">Dba o to, żeby uczestnicy byli najedzeni podczas intensywnych 48 godzin tworzenia gier.</div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">📢</div>
+                        <div class="partner-name">Partner Medialny</div>
+                        <div class="partner-description">Promuje wydarzenie w mediach lokalnych i społecznościowych, zwiększając jego zasięg.</div>
                     </div>
                 </div>
             </div>
