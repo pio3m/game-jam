@@ -8,11 +8,103 @@
     <link rel="stylesheet" href="assets/css/styles.min.css" />
 </head>
 <body>
-    <!-- Language Switcher -->
-    <div class="lang-switcher" role="group" aria-label="Language switcher">
-        <button class="lang-btn" data-switch-to="pl" aria-pressed="true">PL</button>
-        <button class="lang-btn" data-switch-to="en" aria-pressed="false">EN</button>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" role="status" aria-live="polite">
+        <div class="container announcement-inner">
+            <div class="announcement-text">
+                <span data-lang="pl"><strong>LIVE:</strong> rozmowa z osobami zainteresowanymi • 17 października 2025, godz. 19:00</span>
+                <span data-lang="en"><strong>LIVE:</strong> chat with interested participants • Oct 17, 2025, 7:00 PM</span>
+                <a class="announcement-link" href="#" aria-label="Link do spotkania (wkrótce)">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                        <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"/>
+                        <path fill="currentColor" d="M5 5h7v2H7v10h10v-5h2v7H5z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </div>
+    <!-- Language Switcher -->
+    <!-- Language switcher and join moved into navbar (right) -->
+
+    <!-- Fixed Navigation -->
+    <nav class="site-nav" role="navigation" aria-label="Główna nawigacja">
+        <div class="container nav-inner">
+            <div class="nav-left">
+                <a href="#" aria-label="Powrót na górę strony" class="nav-pad-link">
+                    <img src="assets/images/logo-pad.png" alt="Ikona pada — Skansen Game Jam" class="nav-pad" />
+                </a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-toggle" aria-label="Otwórz menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Desktop navigation -->
+            <div class="nav-center" aria-label="Menu sekcji">
+                <a href="#o-wydarzeniu" class="nav-link">O wydarzeniu</a>
+                <a href="#historia" class="nav-link">Historia</a>
+                <a href="#cel-charytatywny" class="nav-link">Cel charytatywny</a>
+                <a href="#harmonogram" class="nav-link">Harmonogram</a>
+                <a href="#partnerzy" class="nav-link">Partnerzy</a>
+                <a href="#kontakt" class="nav-link">Kontakt</a>
+            </div>
+            
+            <div class="nav-right">
+                <a href="#zapisy" class="join-btn" aria-label="Przejdź do zapisów">Dołączam</a>
+                <div class="lang-switcher" role="group" aria-label="Language switcher">
+                    <input type="checkbox" id="lang-toggle" class="lang-toggle">
+                    <label for="lang-toggle" class="lang-slider">
+                        <span class="lang-option" data-lang="pl">PL</span>
+                        <span class="lang-option" data-lang="en">EN</span>
+                        <span class="lang-highlight"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile navigation overlay -->
+        <div class="mobile-nav-overlay">
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-header">
+                    <div class="mobile-header-left">
+                        <img src="assets/images/logo-pad.png" alt="Skansen Game Jam" class="mobile-nav-logo" />
+                        <div class="lang-switcher mobile-lang-switcher">
+                            <input type="checkbox" id="mobile-lang-toggle" class="lang-toggle">
+                            <label for="mobile-lang-toggle" class="lang-slider">
+                                <span class="lang-option" data-lang="pl">PL</span>
+                                <span class="lang-option" data-lang="en">EN</span>
+                                <span class="lang-highlight"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-close" aria-label="Zamknij menu">
+                        <span class="close-icon">×</span>
+                    </button>
+                </div>
+                <nav class="mobile-nav-menu" role="navigation" aria-label="Menu mobilne">
+                    <a href="#o-wydarzeniu" class="mobile-nav-link" data-lang="pl">O wydarzeniu</a>
+                    <a href="#o-wydarzeniu" class="mobile-nav-link" data-lang="en">About the event</a>
+                    <a href="#historia" class="mobile-nav-link" data-lang="pl">Historia</a>
+                    <a href="#historia" class="mobile-nav-link" data-lang="en">History</a>
+                    <a href="#cel-charytatywny" class="mobile-nav-link" data-lang="pl">Cel charytatywny</a>
+                    <a href="#cel-charytatywny" class="mobile-nav-link" data-lang="en">Charitable purpose</a>
+                    <a href="#harmonogram" class="mobile-nav-link" data-lang="pl">Harmonogram</a>
+                    <a href="#harmonogram" class="mobile-nav-link" data-lang="en">Schedule</a>
+                    <a href="#partnerzy" class="mobile-nav-link" data-lang="pl">Partnerzy</a>
+                    <a href="#partnerzy" class="mobile-nav-link" data-lang="en">Partners</a>
+                    <a href="#kontakt" class="mobile-nav-link" data-lang="pl">Kontakt</a>
+                    <a href="#kontakt" class="mobile-nav-link" data-lang="en">Contact</a>
+                </nav>
+                <div class="mobile-nav-footer">
+                    <a href="#zapisy" class="mobile-join-btn" data-lang="pl">Dołączam</a>
+                    <a href="#zapisy" class="mobile-join-btn" data-lang="en">Join us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero -->
     <section class="hero">
@@ -419,10 +511,26 @@
     <script>
         (function(){
             const html=document.documentElement;
-            const btns=document.querySelectorAll('.lang-btn');
+            const toggle=document.getElementById('lang-toggle');
+            const mobileToggle=document.getElementById('mobile-lang-toggle');
+            const banner=document.querySelector('.announcement-bar');
+            const nav=document.querySelector('.site-nav');
+            const mobileMenuToggle=document.querySelector('.mobile-menu-toggle');
+            const mobileNavOverlay=document.querySelector('.mobile-nav-overlay');
+            const mobileMenuClose=document.querySelector('.mobile-menu-close');
+            const mobileNavLinks=document.querySelectorAll('.mobile-nav-link');
+            let lastY=window.scrollY;
+            let ticking=false;
+            function setBannerHeight(){
+                if(!banner) return;
+                const h=banner.getBoundingClientRect().height;
+                html.style.setProperty('--banner-h', h+'px');
+                if(nav){ nav.style.top = h + 'px'; }
+            }
             function setLang(lang){
                 html.setAttribute('lang',lang);
-                btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.switchTo===lang)));
+                if(toggle){ toggle.checked = lang === 'en'; }
+                if(mobileToggle){ mobileToggle.checked = lang === 'en'; }
                 const meta=document.querySelector('meta[name="description"]');
                 if(meta){
                     meta.setAttribute('content',
@@ -433,8 +541,89 @@
                 }
                 document.title=lang==='pl'?'Skansen Game Jam 2025 | Sierpc':'Skansen Game Jam 2025 | Sierpc (EN)';
             }
-            btns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.switchTo)));
+            
+            // Mobile menu functionality
+            function openMobileMenu(){
+                mobileNavOverlay.classList.add('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeMobileMenu(){
+                mobileNavOverlay.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+            
+            // Event listeners for mobile menu
+            if(mobileMenuToggle){
+                mobileMenuToggle.addEventListener('click', openMobileMenu);
+            }
+            if(mobileMenuClose){
+                mobileMenuClose.addEventListener('click', closeMobileMenu);
+            }
+            // Add backdrop click to close (click outside panel)
+            if(mobileNavOverlay){
+                document.addEventListener('click', function(e){
+                    if(mobileNavOverlay.classList.contains('active') && 
+                       !mobileNavOverlay.contains(e.target) && 
+                       !mobileMenuToggle.contains(e.target)){
+                        closeMobileMenu();
+                    }
+                });
+            }
+            
+            // Close mobile menu when clicking on nav links
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+            
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function(e){
+                if(e.key === 'Escape' && mobileNavOverlay.classList.contains('active')){
+                    closeMobileMenu();
+                }
+            });
+            if(toggle){ toggle.addEventListener('change',()=>setLang(toggle.checked ? 'en' : 'pl')); }
+            if(mobileToggle){ mobileToggle.addEventListener('change',()=>setLang(mobileToggle.checked ? 'en' : 'pl')); }
+            function showBanner(){
+                if(!banner) return;
+                banner.style.display='block';
+                setBannerHeight();
+                banner.classList.remove('announcement-hidden');
+                html.classList.remove('banner-hidden');
+            }
+            function hideBanner(){
+                if(!banner) return;
+                banner.classList.add('announcement-hidden');
+                html.classList.add('banner-hidden');
+                banner.style.display='none';
+                html.style.setProperty('--banner-h','0px');
+                if(nav){ nav.style.top = '0px'; }
+            }
+            function onScroll(){
+                const y=window.scrollY;
+                if(!banner){return}
+                if(y>lastY && y>20){
+                    hideBanner();
+                } else if(y<lastY && (y<120)){ // scrolling up near top
+                    showBanner();
+                }
+                lastY=y;
+                ticking=false;
+            }
+            window.addEventListener('resize',setBannerHeight);
+            window.addEventListener('load',setBannerHeight);
+            const mo=banner?new MutationObserver(setBannerHeight):null;
+            if(mo&&banner){mo.observe(banner,{subtree:true,childList:true,characterData:true,attributes:true});}
+            window.addEventListener('scroll',()=>{
+                if(!ticking){
+                    window.requestAnimationFrame(onScroll);
+                    ticking=true;
+                }
+            },{passive:true});
             setLang('pl');
+            setBannerHeight();
         })();
     </script>
 </body>
