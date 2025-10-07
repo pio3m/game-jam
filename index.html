@@ -5,79 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Skansen Game Jam 2025 — 48 godzin na stworzenie gry komputerowej w Sierpcu. 7–9 listopada 2025. Wersja online hostowana na itch.io." />
     <title>Skansen Game Jam 2025 | Sierpc</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#fff;background:#0b0f1a;overflow-x:hidden}
-        .container{max-width:960px;margin:0 auto;padding:0 20px}
-        /* Language Switcher */
-        .lang-switcher{position:fixed;top:16px;right:16px;z-index:50;display:inline-flex;gap:8px;background:rgba(15,23,42,.7);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:6px;backdrop-filter:blur(6px)}
-        .lang-btn{background:transparent;border:0;color:#e2e8f0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;transition:.2s}
-        .lang-btn[aria-pressed="true"]{background:#60a5fa;color:#0b0f1a}
-        /* Hero */
-        .hero{min-height:100vh;display:flex;align-items:center;position:relative;background:linear-gradient(135deg,#0b0f1a 0%,#1e293b 100%)}
-        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(96,165,250,.1) 0%,transparent 70%);pointer-events:none}
-        .hero-content{position:relative;z-index:2;text-align:center}
-        .hero-logo{max-width:300px;width:100%;height:auto;margin-bottom:2rem;filter:drop-shadow(0 4px 15px rgba(0,0,0,.3))}
-        .hero h1{font-size:clamp(2.5rem,8vw,4rem);font-weight:700;margin-bottom:1rem;background:linear-gradient(135deg,#60a5fa,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
-        @media (max-width:768px){.hero-logo{max-width:250px}}
-        .hero-subtitle{font-size:clamp(1.1rem,3vw,1.3rem);margin-bottom:.5rem;color:#e2e8f0;font-weight:500}
-        .hero-description{font-size:clamp(1rem,2.5vw,1.1rem);margin:2rem auto;color:#cbd5e1;max-width:600px}
-        .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-        .cta-button{display:inline-block;padding:16px 32px;background:#4ade80;color:#0b0f1a;text-decoration:none;border-radius:12px;font-weight:600;font-size:1.1rem;transition:.3s;box-shadow:0 4px 15px rgba(74,222,128,.3);margin-top:1rem}
-        .cta-button:hover{background:#22c55e;transform:translateY(-2px);box-shadow:0 8px 25px rgba(74,222,128,.4)}
-        section{padding:30px 0}
-        section:nth-of-type(even){background:rgba(30,41,59,.3)}
-        .section-title{font-size:clamp(2rem,5vw,2.5rem);color:#60a5fa;margin-bottom:1.5rem;text-align:center;font-weight:700}
-        .section-content{font-size:1.1rem;line-height:1.8;max-width:800px;margin:0 auto}
-        .section-content p{margin-bottom:1rem}
-        .charity{background:linear-gradient(135deg,rgba(74,222,128,.1),rgba(96,165,250,.1));border:1px solid rgba(74,222,128,.2);border-radius:16px;padding:25px;margin:25px 0}
-        .charity-link{display:inline-flex;align-items:center;gap:12px;color:#4ade80;text-decoration:none;font-weight:600;border:2px solid #4ade80;padding:12px 24px;border-radius:8px;transition:.3s;margin:20px 0}
-        .charity-link:hover{background:rgba(74,222,128,.1);transform:translateX(4px)}
-        .gofundme-widget{margin:30px 0;text-align:center}
-        .gofundme-widget iframe{max-width:100%;border-radius:12px}
-        .schedule-list{list-style:none;max-width:600px;margin:0 auto}
-        .schedule-list li{padding:20px;margin:16px 0;background:rgba(30,41,59,.5);border-radius:12px;border-left:4px solid #60a5fa;position:relative;transition:.3s}
-        .schedule-list li:hover{background:rgba(30,41,59,.7);transform:translateX(8px)}
-        .registration{background:linear-gradient(135deg,rgba(96,165,250,.1),rgba(74,222,128,.1));border-radius:16px;padding:25px;margin:25px 0}
-        .highlight-note{background:rgba(74,222,128,.2);border:1px solid #4ade80;padding:20px;border-radius:12px;margin:30px 0;text-align:center;font-weight:600;font-size:1.1rem}
-        .contact-info{text-align:center;font-size:1.1rem}.contact-info p{margin:12px 0}
-        footer{background:#0f172a;padding:25px 0;text-align:center;border-top:1px solid rgba(255,255,255,.1)}
-        footer p{margin:8px 0;color:#94a3b8}footer a{color:#60a5fa;text-decoration:none}footer a:hover{text-decoration:underline}
-        @media (max-width:768px){.container{padding:0 16px}section{padding:25px 0}.charity,.registration{padding:20px 15px;margin:20px 0}.schedule-list li:hover{transform:none}}
-        html{scroll-behavior:smooth}
-        .cta-button:focus,.charity-link:focus,.lang-btn:focus{outline:2px solid #4ade80;outline-offset:2px}
-        .logo-container{display:flex;justify-content:center;align-items:center;background:#fff;border-radius:24px;box-shadow:0 8px 32px rgba(96,165,250,.10),0 2px 8px rgba(0,0,0,.08);padding:2.5rem 2.5rem 2rem;margin-bottom:2.5rem;max-width:340px;margin-left:auto;margin-right:auto;transition:box-shadow .3s}
-        .logo-container:hover{box-shadow:0 16px 48px rgba(96,165,250,.18),0 4px 16px rgba(0,0,0,.12)}
-        .jam-photo-block{display:flex;flex-direction:column;align-items:center;margin-bottom:2.5rem}
-        .jam-photo{width:100%;max-width:600px;border-radius:18px;box-shadow:0 4px 24px rgba(96,165,250,.13),0 2px 8px rgba(0,0,0,.10);margin-bottom:1.2rem}
-        .jam-photo-desc{background:linear-gradient(90deg,#60a5fa15 0%,#4ade8015 100%);color:#e2e8f0;padding:1rem 1.5rem;border-radius:12px;font-size:1.08rem;text-align:center;box-shadow:0 2px 8px rgba(96,165,250,.07)}
-        /* Partners — modern grid */
-        .partners-wrap{max-width:1100px;margin:0 auto}
-        .partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-        .partner-card{
-            position:relative;overflow:hidden;border-radius:18px;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
-            border:1px solid rgba(255,255,255,.08);box-shadow:0 6px 24px rgba(0,0,0,.18);backdrop-filter:blur(6px);transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease
-        }
-        .partner-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,.24);border-color:rgba(96,165,250,.35)}
-        .partner-top{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-        .partner-logo{
-            width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.9);
-            overflow:hidden;border:1px solid rgba(0,0,0,.08)
-        }
-        .partner-logo img{max-width:100%;max-height:100%;object-fit:contain}
-        .partner-monogram{
-            width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-weight:800;
-            background:linear-gradient(135deg,#60a5fa,#4ade80);color:#0b0f1a
-        }
-        .partner-name{font-weight:700;color:#e2e8f0}
-        .partner-desc{font-size:.95rem;color:#cbd5e1}
-        .partner-links{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-        .chip{font-size:.85rem;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#cbd5e1;text-decoration:none}
-        .chip:hover{border-color:#60a5fa;color:#e2e8f0}
-        /* Language visibility */
-        [data-lang]{display:none}
-        [data-lang="pl"]{display:block}
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.min.css" />
 </head>
 <body>
     <!-- Language Switcher -->
@@ -91,7 +19,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="logo-container">
-                    <img src="logo.png" alt="Logo Skansen Game Jam" class="hero-logo" />
+                    <img src="assets/images/logo.png" alt="Logo Skansen Game Jam" class="hero-logo" />
                 </div>
                 <h1>Skansen Game Jam 2025</h1>
 
@@ -139,19 +67,19 @@
             <!-- PL -->
             <div class="section-content" data-lang="pl">
                 <div class="jam-photo-block">
-                    <img src="IMG_1331.jpg" alt="Otwarcie Skansen Game Jam — prezentacja i omówienie zasad" class="jam-photo">
+                    <img src="assets/images/IMG_1331.jpg" alt="Otwarcie Skansen Game Jam — prezentacja i omówienie zasad" class="jam-photo">
                     <div class="jam-photo-desc"><strong>Otwarcie 4. edycji</strong> — prezentacja, zasady i start jamu.</div>
                 </div>
                 <div class="jam-photo-block">
-                    <img src="1.jpg" alt="Wspólne zdjęcie uczestników przed zabytkową chałupą w skansenie" class="jam-photo">
+                    <img src="assets/images/1.jpg" alt="Wspólne zdjęcie uczestników przed zabytkową chałupą w skansenie" class="jam-photo">
                     <div class="jam-photo-desc">Wspólne zdjęcie przed chałupą — integracja w wyjątkowej scenerii skansenu.</div>
                 </div>
                 <div class="jam-photo-block">
-                    <img src="2.jpg" alt="Grupa przy wozie konnym podczas przerwy w skansenie" class="jam-photo">
+                    <img src="assets/images/2.jpg" alt="Grupa przy wozie konnym podczas przerwy w skansenie" class="jam-photo">
                     <div class="jam-photo-desc">Chwila oddechu w terenie — przejazd wozem i zwiedzanie skansenu.</div>
                 </div>
                 <div class="jam-photo-block">
-                    <img src="3.jpg" alt="Skansen w Sierpcu — miejsce wydarzenia" class="jam-photo">
+                    <img src="assets/images/3.jpg" alt="Skansen w Sierpcu — miejsce wydarzenia" class="jam-photo">
                     <div class="jam-photo-desc"><strong>Skansen w Sierpcu</strong> — tradycja spotyka technologię. Tu tworzymy gry.</div>
                 </div>
 
@@ -162,19 +90,19 @@
             <!-- EN -->
             <div class="section-content" data-lang="en">
                 <div class="jam-photo-block">
-                    <img src="IMG_1331.jpg" alt="Opening talk — presentation and rules overview" class="jam-photo">
+                    <img src="assets/images/IMG_1331.jpg" alt="Opening talk — presentation and rules overview" class="jam-photo">
                     <div class="jam-photo-desc"><strong>4th edition opening</strong> — intro talk, rules, and kickoff.</div>
                 </div>
                 <div class="jam-photo-block">
-                    <img src="1.jpg" alt="Group photo in front of a historic cottage at the museum" class="jam-photo">
+                    <img src="assets/images/1.jpg" alt="Group photo in front of a historic cottage at the museum" class="jam-photo">
                     <div class="jam-photo-desc">Group photo — team bonding in the museum’s unique scenery.</div>
                 </div>
                 <div class="jam-photo-block">
-                    <img src="2.jpg" alt="Team by a horse-drawn wagon during a break at the museum" class="jam-photo">
+                    <img src="assets/images/2.jpg" alt="Team by a horse-drawn wagon during a break at the museum" class="jam-photo">
                     <div class="jam-photo-desc">A short break outside — wagon ride and a walk around the museum.</div>
                 </div>
                 <div class="jam-photo-block">
-                    <img src="3.jpg" alt="Open-air museum in Sierpc — event venue" class="jam-photo">
+                    <img src="assets/images/3.jpg" alt="Open-air museum in Sierpc — event venue" class="jam-photo">
                     <div class="jam-photo-desc"><strong>Sierpc Open-Air Museum</strong> — where tradition meets technology.</div>
                 </div>
 
@@ -494,9 +422,6 @@
             const btns=document.querySelectorAll('.lang-btn');
             function setLang(lang){
                 html.setAttribute('lang',lang);
-                document.querySelectorAll('[data-lang]').forEach(el=>{
-                    el.style.display=(el.getAttribute('data-lang')===lang)?(el.tagName==='H2'?'block':''):'none';
-                });
                 btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.switchTo===lang)));
                 const meta=document.querySelector('meta[name="description"]');
                 if(meta){
