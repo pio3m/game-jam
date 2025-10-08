@@ -763,6 +763,524 @@ html[lang="en"] [data-lang="en"]{display:block}
     }
 }
 
+/* Hero Banner Section */
+.edition-2025-section {
+    position: relative;
+    padding: 4rem 0px;
+    background: linear-gradient(135deg, rgba(8, 20, 40, 0.95) 0%, rgba(15, 30, 60, 0.9) 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    margin-top: 4rem;
+}
+
+.edition-2025-section::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.4;
+    z-index: 1;
+    background-image: 
+        linear-gradient(90deg, rgba(20, 40, 80, 0.4) 4px, transparent 4px),
+        linear-gradient(180deg, rgba(20, 40, 80, 0.4) 4px, transparent 4px);
+    background-size: 140px 140px;
+}
+
+.hero-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-banner-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.hero-banner-skansen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 200px;
+}
+
+.skansen-text {
+    color: #82266A;
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-family: 'Arial Black', Arial, sans-serif;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    transform: rotate(180deg);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile version - horizontal text */
+@media (max-width: 768px) {
+    .skansen-text {
+        writing-mode: horizontal-tb;
+        text-orientation: initial;
+        transform: none;
+        height: auto;
+        font-size: 1.8rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .hero-banner-skansen {
+        height: auto;
+        min-height: auto;
+    }
+    
+    .hero-banner-main {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-banner-logo {
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-banner-text {
+        margin-top: 0.5rem;
+    }
+}
+
+.hero-banner-logo {
+    flex-shrink: 0;
+}
+
+.banner-logo {
+    width: 320px;
+    height: 320px;
+    object-fit: contain;
+    filter: drop-shadow(rgba(96, 165, 250, 0.3) 0px 4px 12px);
+    transition: transform 0.3s ease;
+}
+
+.banner-logo:hover {
+    transform: scale(0.95);
+}
+
+.hero-banner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 0%;
+}
+
+.banner-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    background: linear-gradient(135deg, rgb(96, 165, 250), rgb(74, 222, 128)) text;
+    margin: 0px 0px 0.5rem;
+}
+
+.banner-edition {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    background: linear-gradient(135deg, rgb(96, 165, 250), rgb(74, 222, 128)) text;
+    margin: 0px 0px 0.5rem;
+}
+
+.banner-dates {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.3;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-banner-charity {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(74, 222, 128, 0.1));
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(96, 165, 250, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    gap: 1.5rem;
+    width: 100%;
+    margin: 1.5rem auto 0;
+}
+
+.charity-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.charity-icon {
+    flex-shrink: 0;
+    color: rgb(248, 113, 113);
+    width: 32px;
+    height: 32px;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.charity-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    margin: 0px 0px 0.5rem;
+}
+
+.charity-text p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin: 0px;
+}
+
+/* Hero Banner Responsive */
+@media (max-width: 1024px) {
+    .hero-banner-content {
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+    
+    .hero-banner-main {
+        gap: 1.5rem;
+    }
+    
+    .banner-logo {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .hero-banner-charity {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner-section {
+        min-height: 50vh;
+    }
+    
+    .hero-banner-content {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-banner-main {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .banner-logo {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .hero-banner-text {
+        align-items: center;
+    }
+    
+    .hero-banner-charity {
+        padding: 1.25rem;
+        margin: 1.5rem auto 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner-section {
+        min-height: 40vh;
+    }
+    
+    .hero-banner-content {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .hero-banner-main {
+        gap: 1rem;
+    }
+    
+    .banner-logo {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-banner-charity {
+        padding: 1rem;
+        margin: 1rem auto 0;
+    }
+    
+    .charity-content {
+        gap: 1rem;
+    }
+    
+    .charity-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .charity-text h3 {
+        font-size: 1.25rem;
+    }
+    
+    .charity-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Special Guest Section */
+.special-guest-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.guest-card {
+    background: linear-gradient(135deg, #0b0f1a 0%, #1e293b 100%);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.guest-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #60a5fa, #4ade80);
+    border-radius: 0 2px 2px 0;
+}
+
+.guest-card .card-title {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.guest-card .card-icon {
+    background: linear-gradient(135deg, #60a5fa, #4ade80);
+    border-radius: 12px;
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 1rem;
+}
+
+.guest-card h3 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: #fff;
+    margin: 0;
+}
+
+.guest-description {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .guest-card {
+        padding: 1.5rem;
+    }
+
+    .guest-card .card-title {
+        margin-bottom: 1rem;
+    }
+
+    .guest-card h3 {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    .guest-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .guest-card {
+        padding: 1rem;
+    }
+
+    .guest-card .card-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 0.75rem;
+    }
+
+    .guest-card h3 {
+        font-size: clamp(1.1rem, 5vw, 1.5rem);
+    }
+
+    .guest-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Registration and Special Guest Sections */
+.registration-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.registration-section {
+    position: relative;
+    background: linear-gradient(135deg, #0b0f1a 0%, #1e293b 100%);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.registration-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #60a5fa, #4ade80);
+    border-radius: 0 2px 2px 0;
+}
+
+.special-guest-section {
+    position: relative;
+    background: linear-gradient(135deg, #0b0f1a 0%, #1e293b 100%);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.special-guest-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #60a5fa, #4ade80);
+    border-radius: 0 2px 2px 0;
+}
+
+.guest-info {
+    color: #fff;
+}
+
+.guest-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.guest-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+}
+
+/* Registration and Special Guest Responsive */
+@media (max-width: 1024px) {
+    .registration-sections {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .registration-section,
+    .special-guest-section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .registration-sections {
+        gap: 1rem;
+    }
+    
+    .registration-section,
+    .special-guest-section {
+        padding: 1.25rem;
+    }
+    
+    .guest-name {
+        font-size: 1.3rem;
+    }
+    
+    .guest-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-section,
+    .special-guest-section {
+        padding: 1rem;
+    }
+    
+    .guest-name {
+        font-size: 1.2rem;
+    }
+    
+    .guest-description {
+        font-size: 0.9rem;
+    }
+}
+
 /* Gallery Modal */
 .gallery-modal {
     position: fixed;
