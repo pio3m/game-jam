@@ -121,8 +121,9 @@ html.banner-hidden .site-nav{top:0}
 .game-jam-section{padding:4rem 0;position:relative}
 .game-jam-content{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;max-width:1200px;margin:0 auto;padding:2rem 0 2rem 2rem;position:relative;z-index:1;background:linear-gradient(135deg,#0b0f1a 0%,#1e293b 100%);border:1px solid rgba(96,165,250,.2);border-radius:20px;backdrop-filter:blur(10px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
 .game-jam-text{color:#fff}
-.game-jam-icon{width:64px;height:64px;background:linear-gradient(135deg,#60a5fa,#4ade80);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:#fff}
-.game-jam-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:1.5rem;color:#fff;line-height:1.2}
+.game-jam-icon{width:64px;height:64px;background:linear-gradient(135deg,#60a5fa,#4ade80);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-right:1.5rem;color:#fff;flex-shrink:0}
+.game-jam-title{display:flex;align-items:center;margin-bottom:1.5rem}
+.game-jam-title h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:#fff;line-height:1.2;margin:0}
 .game-jam-description{font-size:1.1rem;line-height:1.6;margin-bottom:1.5rem;color:rgba(255,255,255,.9);max-width:500px}
 .game-jam-location{font-size:1rem;line-height:1.6;margin-bottom:2rem;color:rgba(255,255,255,.8);max-width:500px}
 .game-jam-buttons{display:flex;gap:1rem;flex-wrap:nowrap;margin-top:1rem}
@@ -152,9 +153,10 @@ html.banner-hidden .site-nav{top:0}
 .tooltip:hover::after,.tooltip:hover::before{opacity:1;visibility:visible}
 
 /* Game Jam Section Responsive */
-@media (max-width:1024px){.game-jam-content{grid-template-columns:1fr auto;gap:2rem;padding:1.75rem 0 1.75rem 1.75rem;align-items:center}}
-@media (max-width:768px){.game-jam-content{grid-template-columns:1fr;gap:2rem;text-align:center;padding:1.5rem;align-items:center}.game-jam-cards{max-width:500px;margin:0 auto;flex-direction:column;border-radius:12px;align-items:stretch}.game-jam-card{display:block;justify-content:normal}.game-jam-card:first-child{border-radius:12px 12px 0 0}.game-jam-card:last-child{border-radius:0 0 12px 12px}.game-jam-description{max-width:none}.game-jam-location{max-width:none}.game-jam-buttons{justify-content:center}}
-@media (max-width:480px){.game-jam-section{padding:3rem 0}.game-jam-content{padding:1.25rem}.game-jam-icon{width:56px;height:56px;margin:0 auto 1rem}.game-jam-title{font-size:clamp(1.75rem,6vw,2.5rem)}.game-jam-description{font-size:1rem}.game-jam-location{font-size:0.95rem}.game-jam-btn{font-size:0.9rem;padding:12px 20px;white-space:nowrap}.game-jam-card{padding:1rem}.card-header h3{font-size:1.1rem}}
+@media (max-width:1200px){.game-jam-content{max-width:100%;padding:1.5rem}}
+@media (max-width:1024px){.game-jam-content{grid-template-columns:1fr;gap:2.5rem;padding:1.5rem;text-align:center}.game-jam-cards{max-width:600px;margin:0 auto;flex-direction:row;border-radius:12px}.game-jam-card{min-width:250px}.game-jam-description{max-width:none;margin:0 auto 1.5rem}.game-jam-location{max-width:none;margin:0 auto 2rem}.game-jam-buttons{justify-content:center}}
+@media (max-width:768px){.game-jam-section{padding:3.5rem 0}.game-jam-content{padding:1.25rem;gap:2rem}.game-jam-cards{max-width:100%;flex-direction:column;border-radius:12px;gap:0}.game-jam-card{min-width:auto;width:100%}.game-jam-card:first-child{border-radius:12px 12px 0 0}.game-jam-card:last-child{border-radius:0 0 12px 12px}.game-jam-description{max-width:none}.game-jam-location{max-width:none}.game-jam-buttons{justify-content:center;flex-wrap:wrap;gap:0.75rem}}
+@media (max-width:480px){.game-jam-section{padding:2.5rem 0}.game-jam-content{padding:1rem;gap:1.5rem}.game-jam-icon{width:48px;height:48px;margin-right:0.75rem}.game-jam-title h2{font-size:clamp(1.4rem,5.5vw,2rem)}.game-jam-description{font-size:0.95rem;margin-bottom:1.25rem}.game-jam-location{font-size:0.9rem;margin-bottom:1.5rem}.game-jam-btn{font-size:0.85rem;padding:10px 16px;white-space:nowrap}.game-jam-card{padding:1rem}.card-header h3{font-size:1rem}.card-header{margin-bottom:1rem;padding-bottom:0.75rem}.info-item{padding:0.5rem 0}.info-label{font-size:0.8rem;min-width:70px}.info-value{font-size:0.85rem}.tag{font-size:0.7rem;padding:3px 6px}}
 
 /* Game Jam Description Section */
 .game-jam-description-section{padding:3rem 0;position:relative}
