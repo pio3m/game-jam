@@ -2022,8 +2022,14 @@ html[lang="en"] [data-lang="en"]{display:block}
 }
 
 /* Schedule Styles */
+.schedule-days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
 .schedule-day {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .schedule-day h4 {
@@ -2292,6 +2298,11 @@ html[lang="en"] [data-lang="en"]{display:block}
     
     .packages-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .schedule-days-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .requirements-list {
