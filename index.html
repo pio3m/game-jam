@@ -610,80 +610,136 @@
                             </div>
                         </div>
 
-                        <!-- Location & Logistics -->
-                        <div class="event-detail-card-full">
-                            <div class="card-header">
-                                <div class="card-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
-                                        <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
+                        <!-- Location & What to Bring (side by side) -->
+                        <div class="event-details-horizontal">
+                            <!-- Location & Logistics -->
+                            <div class="event-detail-card-half">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <h3 data-lang="pl">Lokalizacja i logistyka</h3>
+                                    <h3 data-lang="en">Location & Logistics</h3>
                                 </div>
-                                <h3 data-lang="pl">Lokalizacja i logistyka</h3>
-                                <h3 data-lang="en">Location & Logistics</h3>
-                            </div>
-                            <div class="card-content">
-                                <div class="location-info">
-                                    <h4 data-lang="pl">Hotel Skansen Conference & SPA</h4>
-                                    <h4 data-lang="en">Hotel Skansen Conference & SPA</h4>
-                                    <p data-lang="pl">Sierpc, ul. Skansen 1</p>
-                                    <p data-lang="en">Sierpc, ul. Skansen 1</p>
-                                    <div class="location-details">
-                                        <div class="detail-item">
-                                            <strong data-lang="pl">Parking:</strong>
-                                            <strong data-lang="en">Parking:</strong>
-                                            <span data-lang="pl">Bezpłatny</span>
-                                            <span data-lang="en">Free</span>
+                                <div class="card-content">
+                                    <div class="location-info">
+                                        <h4 data-lang="pl">Hotel Skansen Conference & SPA</h4>
+                                        <h4 data-lang="en">Hotel Skansen Conference & SPA</h4>
+                                        <p data-lang="pl">Sierpc, ul. Skansen 1</p>
+                                        <p data-lang="en">Sierpc, ul. Skansen 1</p>
+                                        <div class="location-details">
+                                            <div class="detail-item">
+                                                <strong data-lang="pl">Parking:</strong>
+                                                <strong data-lang="en">Parking:</strong>
+                                                <span data-lang="pl">Bezpłatny</span>
+                                                <span data-lang="en">Free</span>
+                                            </div>
+                                            <div class="detail-item">
+                                                <strong data-lang="pl">Dojazd:</strong>
+                                                <strong data-lang="en">Transport:</strong>
+                                                <span data-lang="pl">Autobus z Warszawy, własny transport</span>
+                                                <span data-lang="en">Bus from Warsaw, own transport</span>
+                                            </div>
                                         </div>
-                                        <div class="detail-item">
-                                            <strong data-lang="pl">Dojazd:</strong>
-                                            <strong data-lang="en">Transport:</strong>
-                                            <span data-lang="pl">Autobus z Warszawy, własny transport</span>
-                                            <span data-lang="en">Bus from Warsaw, own transport</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- What to Bring -->
+                            <div class="event-detail-card-half">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+                                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <h3 data-lang="pl">Co zabrać</h3>
+                                    <h3 data-lang="en">What to Bring</h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="requirements-list">
+                                        <div class="requirement-category">
+                                            <h4 data-lang="pl">Sprzęt:</h4>
+                                            <h4 data-lang="en">Equipment:</h4>
+                                            <ul>
+                                                <li data-lang="pl">• Laptop z ładowarką</li>
+                                                <li data-lang="en">• Laptop with charger</li>
+                                                <li data-lang="pl">• Mysz i słuchawki</li>
+                                                <li data-lang="en">• Mouse and headphones</li>
+                                                <li data-lang="pl">• Przedłużacz</li>
+                                                <li data-lang="en">• Extension cord</li>
+                                            </ul>
+                                        </div>
+                                        <div class="requirement-category">
+                                            <h4 data-lang="pl">Oprogramowanie:</h4>
+                                            <h4 data-lang="en">Software:</h4>
+                                            <ul>
+                                                <li data-lang="pl">• Unity, Godot, lub inny silnik</li>
+                                                <li data-lang="en">• Unity, Godot, or other engine</li>
+                                                <li data-lang="pl">• Edytor kodu (VS Code, etc.)</li>
+                                                <li data-lang="en">• Code editor (VS Code, etc.)</li>
+                                                <li data-lang="pl">• Grafika: GIMP, Aseprite, Photoshop</li>
+                                                <li data-lang="en">• Graphics: GIMP, Aseprite, Photoshop</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- What to Bring -->
-                        <div class="event-detail-card-full">
+                        <!-- What's Included -->
+                        <div class="event-detail-card-full included-services">
                             <div class="card-header">
                                 <div class="card-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2"/>
                                     </svg>
                                 </div>
-                                <h3 data-lang="pl">Co zabrać</h3>
-                                <h3 data-lang="en">What to Bring</h3>
+                                <h3 data-lang="pl">Co jest wliczone w cenę</h3>
+                                <h3 data-lang="en">What's included in the price</h3>
                             </div>
                             <div class="card-content">
-                                <div class="requirements-list">
-                                    <div class="requirement-category">
-                                        <h4 data-lang="pl">Sprzęt:</h4>
-                                        <h4 data-lang="en">Equipment:</h4>
-                                        <ul>
-                                            <li data-lang="pl">• Laptop z ładowarką</li>
-                                            <li data-lang="en">• Laptop with charger</li>
-                                            <li data-lang="pl">• Mysz i słuchawki</li>
-                                            <li data-lang="en">• Mouse and headphones</li>
-                                            <li data-lang="pl">• Przedłużacz</li>
-                                            <li data-lang="en">• Extension cord</li>
-                                        </ul>
+                                <div class="included-grid">
+                                    <div class="included-item">
+                                        <div class="included-icon">🏨</div>
+                                        <div class="included-text">
+                                            <h4 data-lang="pl">Nocleg</h4>
+                                            <h4 data-lang="en">Accommodation</h4>
+                                            <p data-lang="pl">Komfortowe pokoje w Hotel Skansen</p>
+                                            <p data-lang="en">Comfortable rooms at Hotel Skansen</p>
+                                        </div>
                                     </div>
-                                    <div class="requirement-category">
-                                        <h4 data-lang="pl">Oprogramowanie:</h4>
-                                        <h4 data-lang="en">Software:</h4>
-                                        <ul>
-                                            <li data-lang="pl">• Unity, Godot, lub inny silnik</li>
-                                            <li data-lang="en">• Unity, Godot, or other engine</li>
-                                            <li data-lang="pl">• Edytor kodu (VS Code, etc.)</li>
-                                            <li data-lang="en">• Code editor (VS Code, etc.)</li>
-                                            <li data-lang="pl">• Grafika: GIMP, Aseprite, Photoshop</li>
-                                            <li data-lang="en">• Graphics: GIMP, Aseprite, Photoshop</li>
-                                        </ul>
+                                    <div class="included-item">
+                                        <div class="included-icon">🍽️</div>
+                                        <div class="included-text">
+                                            <h4 data-lang="pl">Wyżywienie</h4>
+                                            <h4 data-lang="en">Meals</h4>
+                                            <p data-lang="pl">Wszystkie posiłki i przekąski</p>
+                                            <p data-lang="en">All meals and snacks</p>
+                                        </div>
+                                    </div>
+                                    <div class="included-item">
+                                        <div class="included-icon">🎯</div>
+                                        <div class="included-text">
+                                            <h4 data-lang="pl">Atrakcje</h4>
+                                            <h4 data-lang="en">Activities</h4>
+                                            <p data-lang="pl">Dodatkowe aktywności i rozrywka</p>
+                                            <p data-lang="en">Additional activities and entertainment</p>
+                                        </div>
+                                    </div>
+                                    <div class="included-item">
+                                        <div class="included-icon">👨‍🏫</div>
+                                        <div class="included-text">
+                                            <h4 data-lang="pl">Wsparcie mentorów</h4>
+                                            <h4 data-lang="en">Mentor support</h4>
+                                            <p data-lang="pl">Eksperci do pomocy w rozwoju</p>
+                                            <p data-lang="en">Experts to help with development</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

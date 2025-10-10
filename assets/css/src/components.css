@@ -1964,8 +1964,16 @@ html[lang="en"] [data-lang="en"]{display:block}
     margin-top: 2rem;
 }
 
+/* Horizontal layout for Location + What to Bring */
+.event-details-horizontal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
 .event-detail-card,
-.event-detail-card-full {
+.event-detail-card-full,
+.event-detail-card-half {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
@@ -1978,15 +1986,21 @@ html[lang="en"] [data-lang="en"]{display:block}
     width: 100%;
 }
 
+.event-detail-card-half {
+    width: 100%;
+}
+
 .event-detail-card:hover,
-.event-detail-card-full:hover {
+.event-detail-card-full:hover,
+.event-detail-card-half:hover {
     transform: translateY(-4px);
     border-color: rgba(96, 165, 250, 0.3);
     box-shadow: 0 8px 32px rgba(96, 165, 250, 0.1);
 }
 
 .event-detail-card .card-header,
-.event-detail-card-full .card-header {
+.event-detail-card-full .card-header,
+.event-detail-card-half .card-header {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -1996,7 +2010,8 @@ html[lang="en"] [data-lang="en"]{display:block}
 }
 
 .event-detail-card .card-icon,
-.event-detail-card-full .card-icon {
+.event-detail-card-full .card-icon,
+.event-detail-card-half .card-icon {
     width: 48px;
     height: 48px;
     background: linear-gradient(135deg, #60a5fa, #4ade80);
@@ -2009,16 +2024,71 @@ html[lang="en"] [data-lang="en"]{display:block}
 }
 
 .event-detail-card:hover .card-icon,
-.event-detail-card-full:hover .card-icon {
+.event-detail-card-full:hover .card-icon,
+.event-detail-card-half:hover .card-icon {
     transform: scale(1.05);
 }
 
 .event-detail-card h3,
-.event-detail-card-full h3 {
+.event-detail-card-full h3,
+.event-detail-card-half h3 {
     color: #fff;
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
+}
+
+/* Included services styling */
+.included-services {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(74, 222, 128, 0.1));
+    border: 2px solid rgba(96, 165, 250, 0.3);
+}
+
+.included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.included-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.included-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.included-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #60a5fa, #4ade80);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.included-text h4 {
+    color: #60a5fa;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.included-text p {
+    color: #e2e8f0;
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 /* Schedule Styles */
@@ -2292,8 +2362,17 @@ html[lang="en"] [data-lang="en"]{display:block}
     }
     
     .event-detail-card,
-    .event-detail-card-full {
+    .event-detail-card-full,
+    .event-detail-card-half {
         padding: 1.5rem;
+    }
+    
+    .event-details-horizontal {
+        grid-template-columns: 1fr;
+    }
+    
+    .included-grid {
+        grid-template-columns: 1fr;
     }
     
     .packages-grid {
@@ -2326,19 +2405,22 @@ html[lang="en"] [data-lang="en"]{display:block}
     }
     
     .event-detail-card,
-    .event-detail-card-full {
+    .event-detail-card-full,
+    .event-detail-card-half {
         padding: 1rem;
     }
     
     .event-detail-card .card-header,
-    .event-detail-card-full .card-header {
+    .event-detail-card-full .card-header,
+    .event-detail-card-half .card-header {
         flex-direction: row;
         text-align: left;
         gap: 1rem;
     }
     
     .event-detail-card .card-icon,
-    .event-detail-card-full .card-icon {
+    .event-detail-card-full .card-icon,
+    .event-detail-card-half .card-icon {
         width: 40px;
         height: 40px;
     }
