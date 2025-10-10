@@ -539,6 +539,37 @@
                             </div>
                         </div>
                         
+                        <!-- Call to Action Quote -->
+                        <div class="charity-quote" style="margin: 1.5rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(147, 51, 234, 0.1)); border-left: 4px solid #60a5fa; border-radius: 8px;">
+                            <blockquote style="margin: 0; font-style: italic; font-size: 1.1rem; line-height: 1.6;">
+                                <p data-lang="pl" style="margin: 0 0 0.5rem 0;">"Razem tworzymy historię, która może uratować życie. Twoja pasja to jego szansa."</p>
+                                <p data-lang="en" style="margin: 0 0 0.5rem 0;">"Together we create a story that can save a life. Your passion is his chance."</p>
+                                <cite style="font-size: 0.9rem; opacity: 0.8; font-style: normal;">— Organizatorzy Game Jam</cite>
+                            </blockquote>
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="charity-progress" style="margin: 1rem 0; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                            <div class="progress-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span data-lang="pl" style="font-size: 0.9rem; font-weight: 500;">Postęp zbiórki</span>
+                                <span data-lang="en" style="font-size: 0.9rem; font-weight: 500;">Fundraising Progress</span>
+                                <span style="font-size: 0.9rem; color: #60a5fa; font-weight: bold;">59%</span>
+                            </div>
+                            <div class="progress-bar-container" style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                <div class="progress-bar" style="width: 59%; height: 100%; background: linear-gradient(90deg, #60a5fa, #3b82f6); border-radius: 4px; transition: width 0.3s ease;"></div>
+                            </div>
+                            <div class="progress-info" style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+                                <span data-lang="pl">Cel: £24,000</span>
+                                <span data-lang="en">Goal: £24,000</span>
+                                <span data-lang="pl">Zebrano: £14,032</span>
+                                <span data-lang="en">Raised: £14,032</span>
+                            </div>
+                            <div class="progress-donations" style="text-align: center; margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+                                <span data-lang="pl">230 darowizn</span>
+                                <span data-lang="en">230 donations</span>
+                            </div>
+                        </div>
+                        
                         <div class="card-actions">
                             <a href="#zapisy" class="card-cta secondary">Szczegóły uczestnictwa</a>
                             <a href="https://gofund.me/ef9d8d162" target="_blank" rel="noopener" class="card-cta charity-donation-btn" id="charity-btn-history-2">
@@ -567,20 +598,30 @@
                         <p class="card-description" data-lang="en">
                             Meet Łukasz and his family. We fight for every day of life and hope for the future for them.
                         </p>
-                        <div class="card-visual-area">
+                        <!-- QR Code -->
+                        <div class="hotel-image-container" style="height: 395px; overflow: hidden; border-radius: 8px; margin-bottom: 0;">
+                            <img src="assets/images/qr-code (1).png" alt="Kod QR do zbiórki" class="hotel-image" style="object-fit: cover; width: 100%; height: 100%;">
+                        </div>
+                        <div class="hotel-caption" data-lang="pl">Zeskanuj kod QR, aby wesprzeć zbiórkę dla Łukasza</div>
+                        <div class="hotel-caption" data-lang="en">Scan the QR code to support Łukasz's fundraiser</div>
+                        
+                        <!-- Spacing between QR code and gallery -->
+                        <div style="margin: 2rem 0;"></div>
+                        
+                        <div class="card-visual-area" style="overflow: hidden; border-radius: 8px;">
                             <div class="gallery-slider" id="gallery-slider-2">
                                 <div class="gallery-item active">
-                                    <img src="assets/images/lukasz_cel.webp" alt="Łukasz - cel zbiórki" class="gallery-image">
+                                    <img src="assets/images/lukasz_cel.webp" alt="Łukasz - cel zbiórki" class="gallery-image" style="object-fit: cover; width: 100%; height: 100%;">
                                     <div class="gallery-caption" data-lang="pl">Łukasz — tata, mąż, programista. Walczy o życie dla swojej rodziny.</div>
                                     <div class="gallery-caption" data-lang="en">Łukasz — dad, husband, programmer. Fighting for life for his family.</div>
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="assets/images/lukasz_zona.jpeg" alt="Żona Łukasza" class="gallery-image">
+                                    <img src="assets/images/lukasz_zona.jpeg" alt="Żona Łukasza" class="gallery-image" style="object-fit: cover; width: 100%; height: 100%;">
                                     <div class="gallery-caption" data-lang="pl">Sonia — żona Łukasza, jego opoka w tej trudnej walce o życie.</div>
                                     <div class="gallery-caption" data-lang="en">Sonia — Łukasz's wife, his rock in this difficult fight for life.</div>
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="assets/images/lukasz_syn.jpeg" alt="Syn Łukasza" class="gallery-image">
+                                    <img src="assets/images/lukasz_syn.jpeg" alt="Syn Łukasza" class="gallery-image" style="object-fit: cover; width: 100%; height: 100%;">
                                     <div class="gallery-caption" data-lang="pl">Kacper i Oliwier — synowie Łukasza, dla których walczy o każdy dzień.</div>
                                     <div class="gallery-caption" data-lang="en">Kacper and Oliwier — Łukasz's sons, for whom he fights every day.</div>
                                 </div>
@@ -699,18 +740,18 @@
                     <div class="family-gallery">
                         <div class="family-photo">
                             <img src="assets/images/lukasz_cel.webp" alt="Łukasz - cel zbiórki" class="gallery-image">
-                            <div class="photo-caption" data-lang="pl">Łukasz</div>
-                            <div class="photo-caption" data-lang="en">Łukasz</div>
+                            <div class="gallery-caption" data-lang="pl">Łukasz — tata, mąż, programista. Walczy o życie dla swojej rodziny.</div>
+                            <div class="gallery-caption" data-lang="en">Łukasz — dad, husband, programmer. Fighting for life for his family.</div>
                         </div>
                         <div class="family-photo">
                             <img src="assets/images/lukasz_zona.jpeg" alt="Żona Łukasza" class="gallery-image">
-                            <div class="photo-caption" data-lang="pl">Żona Łukasza</div>
-                            <div class="photo-caption" data-lang="en">Łukasz's Wife</div>
+                            <div class="gallery-caption" data-lang="pl">Sonia — żona Łukasza, jego opoka w tej trudnej walce o życie.</div>
+                            <div class="gallery-caption" data-lang="en">Sonia — Łukasz's wife, his rock in this difficult fight for life.</div>
                         </div>
                         <div class="family-photo">
                             <img src="assets/images/lukasz_syn.jpeg" alt="Syn Łukasza" class="gallery-image">
-                            <div class="photo-caption" data-lang="pl">Syn Łukasza</div>
-                            <div class="photo-caption" data-lang="en">Łukasz's Son</div>
+                            <div class="gallery-caption" data-lang="pl">Kacper i Oliwier — synowie Łukasza, dla których walczy o każdy dzień.</div>
+                            <div class="gallery-caption" data-lang="en">Kacper and Oliwier — Łukasz's sons, for whom he fights every day.</div>
                         </div>
                     </div>
                 </div>
@@ -1212,7 +1253,7 @@
             document.addEventListener('mousemove', updateMousePosition);
             animateElements();
 
-            // Gallery Slider
+            // Original Gallery Slider (working version)
             class GallerySlider {
                 constructor() {
                     this.currentSlide = 0;
@@ -1292,27 +1333,125 @@
                 }
             }
 
-            // Initialize gallery slider
-            new GallerySlider();
-
-            // Gallery Modal
-            class GalleryModal {
+            // Łukasz's Gallery Slider (separate instance)
+            class LukaszGallerySlider {
                 constructor() {
-                    this.modal = document.getElementById('gallery-modal');
-                    this.modalImage = document.getElementById('modal-image');
-                    this.modalCaption = document.getElementById('modal-caption');
-                    this.closeBtn = document.querySelector('.modal-close');
-                    this.prevBtn = document.querySelector('.modal-prev');
-                    this.nextBtn = document.querySelector('.modal-next');
-                    this.galleryImages = document.querySelectorAll('.gallery-image');
-                    this.currentIndex = 0;
-                    this.isOpen = false;
+                    this.currentSlide = 0;
+                    this.slides = document.querySelectorAll('#gallery-slider-2 .gallery-item');
+                    this.dots = document.querySelectorAll('#gallery-slider-2 .dot');
+                    this.prevBtn = document.querySelector('#gallery-slider-2').parentElement.querySelector('.gallery-btn.prev');
+                    this.nextBtn = document.querySelector('#gallery-slider-2').parentElement.querySelector('.gallery-btn.next');
+                    this.autoPlayInterval = null;
+                    this.autoPlayDelay = 4000; // 4 seconds
 
                     this.init();
                 }
 
                 init() {
-                    // Add click listeners to gallery images
+                    if (this.slides.length === 0) return;
+
+                    // Event listeners
+                    this.prevBtn?.addEventListener('click', () => this.prevSlide());
+                    this.nextBtn?.addEventListener('click', () => this.nextSlide());
+                    
+                    this.dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => this.goToSlide(index));
+                    });
+
+                    // Auto-play
+                    this.startAutoPlay();
+
+                    // Pause on hover
+                    const slider = document.querySelector('#gallery-slider-2');
+                    slider?.addEventListener('mouseenter', () => this.stopAutoPlay());
+                    slider?.addEventListener('mouseleave', () => this.startAutoPlay());
+
+                    // Keyboard navigation
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowLeft') this.prevSlide();
+                        if (e.key === 'ArrowRight') this.nextSlide();
+                    });
+                }
+
+                goToSlide(index) {
+                    if (index < 0 || index >= this.slides.length) return;
+
+                    // Remove active class from current slide and dot
+                    this.slides[this.currentSlide]?.classList.remove('active');
+                    this.dots[this.currentSlide]?.classList.remove('active');
+
+                    // Set new current slide
+                    this.currentSlide = index;
+
+                    // Add active class to new slide and dot
+                    this.slides[this.currentSlide]?.classList.add('active');
+                    this.dots[this.currentSlide]?.classList.add('active');
+                }
+
+                nextSlide() {
+                    const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                    this.goToSlide(nextIndex);
+                }
+
+                prevSlide() {
+                    const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+                    this.goToSlide(prevIndex);
+                }
+
+                startAutoPlay() {
+                    this.stopAutoPlay();
+                    this.autoPlayInterval = setInterval(() => {
+                        this.nextSlide();
+                    }, this.autoPlayDelay);
+                }
+
+                stopAutoPlay() {
+                    if (this.autoPlayInterval) {
+                        clearInterval(this.autoPlayInterval);
+                        this.autoPlayInterval = null;
+                    }
+                }
+            }
+
+            // Initialize gallery sliders
+            new GallerySlider();
+            new LukaszGallerySlider();
+
+            // Base Gallery Modal Class (SOLID - Single Responsibility)
+            class BaseGalleryModal {
+                constructor(modalId, gallerySelector) {
+                    this.modal = document.getElementById(modalId);
+                    this.modalImage = document.getElementById('modal-image');
+                    this.modalCaption = document.getElementById('modal-caption');
+                    this.closeBtn = document.querySelector('.modal-close');
+                    this.prevBtn = document.querySelector('.modal-prev');
+                    this.nextBtn = document.querySelector('.modal-next');
+                    this.galleryImages = document.querySelectorAll(gallerySelector);
+                    this.currentIndex = 0;
+                    this.isOpen = false;
+
+                    console.log('=== MODAL DEBUG ===');
+                    console.log('Modal selector:', gallerySelector);
+                    console.log('Gallery images found:', this.galleryImages.length);
+                    console.log('All gallery-image elements on page:', document.querySelectorAll('.gallery-image').length);
+                    console.log('Images in events gallery:', document.querySelectorAll('.gallery-slider:first-of-type .gallery-image').length);
+                    console.log('Images in Łukasz gallery:', document.querySelectorAll('#gallery-slider-2 .gallery-image').length);
+                    console.log('Images in family gallery:', document.querySelectorAll('.family-gallery .gallery-image').length);
+                    
+                    this.galleryImages.forEach((img, index) => {
+                        console.log(`Image ${index}:`, img.src, 'Parent:', img.closest('.gallery-slider, .family-gallery')?.className);
+                    });
+                    console.log('=== END MODAL DEBUG ===');
+
+                    this.init();
+                }
+
+                init() {
+                    this.attachEventListeners();
+                }
+
+                attachEventListeners() {
+                    // Gallery images click handlers
                     this.galleryImages.forEach((img, index) => {
                         img.style.cursor = 'pointer';
                         img.addEventListener('click', () => this.openModal(index));
@@ -1323,7 +1462,7 @@
                     this.prevBtn.addEventListener('click', () => this.prevImage());
                     this.nextBtn.addEventListener('click', () => this.nextImage());
 
-                    // Close modal on backdrop click
+                    // Backdrop click
                     this.modal.addEventListener('click', (e) => {
                         if (e.target === this.modal || e.target.classList.contains('modal-backdrop')) {
                             this.closeModal();
@@ -1390,8 +1529,24 @@
                 }
             }
 
-            // Initialize gallery modal
-            new GalleryModal();
+            // Skansen Gallery Modal (DRY - Don't Repeat Yourself)
+            class SkansenGalleryModal extends BaseGalleryModal {
+                constructor() {
+                    // Only select images from the first gallery-slider (events gallery)
+                    super('gallery-modal', '.gallery-slider:first-of-type .gallery-image');
+                }
+            }
+
+            // Łukasz's Family Gallery Modal (DRY - Don't Repeat Yourself)
+            class LukaszGalleryModal extends BaseGalleryModal {
+                constructor() {
+                    super('gallery-modal', '#gallery-slider-2 .gallery-image, .family-gallery .gallery-image');
+                }
+            }
+
+            // Initialize gallery modals (KISS - Keep It Simple, Stupid)
+            new SkansenGalleryModal();
+            new LukaszGalleryModal();
         })();
     </script>
 </body>
