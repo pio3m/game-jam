@@ -135,7 +135,7 @@ html.banner-hidden .site-nav{top:0}
 .game-jam-card{background:rgba(30,41,59,.9);border:none;border-radius:0;padding:1.5rem;backdrop-filter:blur(15px);flex:1;min-width:200px;display:flex;flex-direction:column;justify-content:space-between}
 .game-jam-card:first-child{border-top-left-radius:12px;border-bottom-left-radius:12px;background:rgba(30,41,59,.95)}
 .game-jam-card:last-child{background:rgba(20,30,45,.9)}
-.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(96,165,250,.1)}
+.card-header{display:flex;justify-content:flex-start;align-items:center;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(96,165,250,.1)}
 .card-header h3{color:#fff;font-size:1.25rem;font-weight:600;margin:0}
 .card-icons{display:flex;gap:8px;color:rgba(255,255,255,.6)}
 .card-content{color:#fff}
