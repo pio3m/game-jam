@@ -2332,9 +2332,9 @@ html[lang="en"] [data-lang="en"]{display:block}
     
     .event-detail-card .card-header,
     .event-detail-card-full .card-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
     }
     
     .event-detail-card .card-icon,
