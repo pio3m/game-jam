@@ -1957,14 +1957,15 @@ html[lang="en"] [data-lang="en"]{display:block}
     width: 95%;
 }
 
-.event-details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+.event-details-vertical {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.event-detail-card {
+.event-detail-card,
+.event-detail-card-full {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
@@ -1973,13 +1974,19 @@ html[lang="en"] [data-lang="en"]{display:block}
     transition: all 0.3s ease;
 }
 
-.event-detail-card:hover {
+.event-detail-card-full {
+    width: 100%;
+}
+
+.event-detail-card:hover,
+.event-detail-card-full:hover {
     transform: translateY(-4px);
     border-color: rgba(96, 165, 250, 0.3);
     box-shadow: 0 8px 32px rgba(96, 165, 250, 0.1);
 }
 
-.event-detail-card .card-header {
+.event-detail-card .card-header,
+.event-detail-card-full .card-header {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -1988,7 +1995,8 @@ html[lang="en"] [data-lang="en"]{display:block}
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.event-detail-card .card-icon {
+.event-detail-card .card-icon,
+.event-detail-card-full .card-icon {
     width: 48px;
     height: 48px;
     background: linear-gradient(135deg, #60a5fa, #4ade80);
@@ -2000,11 +2008,13 @@ html[lang="en"] [data-lang="en"]{display:block}
     transition: transform 0.3s ease;
 }
 
-.event-detail-card:hover .card-icon {
+.event-detail-card:hover .card-icon,
+.event-detail-card-full:hover .card-icon {
     transform: scale(1.05);
 }
 
-.event-detail-card h3 {
+.event-detail-card h3,
+.event-detail-card-full h3 {
     color: #fff;
     font-size: 1.5rem;
     font-weight: 700;
@@ -2271,12 +2281,12 @@ html[lang="en"] [data-lang="en"]{display:block}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .event-details-grid {
-        grid-template-columns: 1fr;
+    .event-details-vertical {
         gap: 1.5rem;
     }
     
-    .event-detail-card {
+    .event-detail-card,
+    .event-detail-card-full {
         padding: 1.5rem;
     }
     
@@ -2304,17 +2314,20 @@ html[lang="en"] [data-lang="en"]{display:block}
         padding: 2rem 0;
     }
     
-    .event-detail-card {
+    .event-detail-card,
+    .event-detail-card-full {
         padding: 1rem;
     }
     
-    .event-detail-card .card-header {
+    .event-detail-card .card-header,
+    .event-detail-card-full .card-header {
         flex-direction: column;
         text-align: center;
         gap: 0.5rem;
     }
     
-    .event-detail-card .card-icon {
+    .event-detail-card .card-icon,
+    .event-detail-card-full .card-icon {
         width: 40px;
         height: 40px;
     }
