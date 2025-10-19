@@ -1196,7 +1196,7 @@
                     <article class="partner-card">
                         <div class="partner-top">
                             <div class="partner-logo">
-                                <img src="assets/images/partner_sierpc_miasto.png" alt="Sierpc - Miasto ze smakiem" />
+                                <img src="assets/images/logo-um-sierpc.png" alt="Sierpc - Miasto ze smakiem" />
                             </div>
                             <div>
                                 <div class="partner-name">Sierpc — Miasto ze smakiem</div>
@@ -1293,7 +1293,7 @@
                     <article class="partner-card">
                         <div class="partner-top">
                             <div class="partner-logo">
-                                <img src="assets/images/logo-koneser.png" alt="Koneser Resto Club" />
+                                <img src="assets/images/koneser.png" alt="Koneser Resto Club" />
                             </div>
                             <div>
                                 <div class="partner-name">Koneser Resto Club</div>
@@ -1593,34 +1593,50 @@
                 if(charityBtn) charityBtn.textContent = lang === 'pl' ? 'Gramy dla Łukasza' : 'We Jam for Łukasz';
                 
                 // Update history content
-                <!-- const historyIntro = document.getElementById('history-intro');
-                if(historyIntro) {
-                    historyIntro.textContent = lang === 'pl' 
-                        ? 'Skansen Game Jam narodził się z lokalnej pasji do gier i edukacji technologicznej. Z każdą edycją rośniemy — przybywa osób, projektów i partnerów.'
-                        : 'Skansen Game Jam was born from local passion for games and technology education. With each edition we grow — more people, projects, and partners join us.';
-                } 
-                
                 // Update edition numbers and descriptions
-               const edition1Number = document.getElementById('edition-1-number');
+                const edition1Number = document.getElementById('edition-1-number');
                 const edition1Desc = document.getElementById('edition-1-desc');
-                if(edition1Number) edition1Number.textContent = lang === 'pl' ? 'Edycja 1' : 'Edition 1';
-                if(edition1Desc) edition1Desc.textContent = lang === 'pl' ? '— startdd inicjatywy, pierwsze zespoły i premierowe tytuły' : '— initiative launch, first teams and premiere titles';
+                if(edition1Number) {
+                    edition1Number.textContent = lang === 'pl' ? 'Edycja I — 2016' : 'Edition I — 2016';
+                }
+                if(edition1Desc) {
+                    edition1Desc.textContent = lang === 'pl' 
+                        ? 'Początek wszystkiego — pierwsze spotkanie pasjonatów, z którego narodziła się tradycja Skansen Game Jam. 🙂'
+                        : 'The beginning of everything — the first meeting of enthusiasts that gave birth to the Skansen Game Jam tradition. 🙂';
+                }
                 
                 const edition2Number = document.getElementById('edition-2-number');
                 const edition2Desc = document.getElementById('edition-2-desc');
-                if(edition2Number) edition2Number.textContent = lang === 'pl' ? 'Edycja 2' : 'Edition 2';
-                if(edition2Desc) edition2Desc.textContent = lang === 'pl' ? '— dołącza udział online, więcej mentorskich konsultacji' : '— online participation added, more mentoring consultations';
+                if(edition2Number) {
+                    edition2Number.textContent = lang === 'pl' ? 'Edycja II — 2022' : 'Edition II — 2022';
+                }
+                if(edition2Desc) {
+                    edition2Desc.textContent = lang === 'pl'
+                        ? 'Powrót po przerwie! Jeszcze więcej uczestników, w tym osoby już związane zawodowo z branżą gier.'
+                        : 'Return after a break! Even more participants, including people already professionally involved in the gaming industry.';
+                }
                 
                 const edition3Number = document.getElementById('edition-3-number');
                 const edition3Desc = document.getElementById('edition-3-desc');
-                if(edition3Number) edition3Number.textContent = lang === 'pl' ? 'Edycja 3' : 'Edition 3';
-                if(edition3Desc) edition3Desc.textContent = lang === 'pl' ? '— rozbudowany program towarzyszący i rekord zgłoszeń' : '— expanded accompanying program and record submissions';
+                if(edition3Number) {
+                    edition3Number.textContent = lang === 'pl' ? 'Edycja III — 2024' : 'Edition III — 2024';
+                }
+                if(edition3Desc) {
+                    edition3Desc.textContent = lang === 'pl'
+                        ? 'Do wydarzenia dołącza legenda polskiego gamedevu — Maciej Miąsik. W jam angażują się także lokalne szkoły i młodzi twórcy.'
+                        : 'A legend of Polish gamedev — Maciej Miąsik joins the event. Local schools and young creators also get involved in the jam.';
+                }
                 
                 const edition4Number = document.getElementById('edition-4-number');
                 const edition4Desc = document.getElementById('edition-4-desc');
-                if(edition4Number) edition4Number.textContent = lang === 'pl' ? 'Edycja 4 (2025)' : 'Edition 4 (2025)';
-                if(edition4Desc) edition4Desc.textContent = lang === 'pl' ? '— 40 godzin tworzenia + cel charytatywny dla Łukasza' : '— 40 hours of creation + charitable goal for Łukasz';
-                 -->
+                if(edition4Number) {
+                    edition4Number.textContent = lang === 'pl' ? 'Edycja IV — 2025' : 'Edition IV — 2025';
+                }
+                if(edition4Desc) {
+                    edition4Desc.textContent = lang === 'pl'
+                        ? 'Edycja o wyjątkowym, charytatywnym celu — po raz pierwszy z możliwością udziału także online.'
+                        : 'Edition with a unique, charitable goal — for the first time with the possibility of online participation.';
+                }
                 // Update stats labels
                 const statParticipants = document.getElementById('stat-participants');
                 const statTeams = document.getElementById('stat-teams');
