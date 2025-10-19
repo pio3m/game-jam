@@ -1,8 +1,21 @@
 // Cookie consent functionality
 function initCookieConsent() {
+    // Always initialize GA with default denied consent
+    initGoogleAnalytics();
+    
     const consent = localStorage.getItem('cookieConsent');
     if (!consent) {
         showCookieConsent();
+    } else if (consent === 'true') {
+        // If user previously accepted, update consent
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'update', {
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+        });
     }
 }
 
@@ -59,25 +72,41 @@ function acceptCookies(banner) {
     banner.classList.add('hiding');
     setTimeout(() => {
         banner.remove();
-        initGoogleAnalytics();
+        // Update consent after user accepts
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'update', {
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+        });
     }, 500);
 }
 
 function initGoogleAnalytics() {
-    // Replace with your Google Analytics tag
-    const gaTag = 'G-XXXXXXXXXX';
+    const gaTag = 'G-9XDQY1GJGD';
     
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${gaTag}`;
-    document.head.appendChild(script);
-
+    // Initialize dataLayer with default denied consent
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'wait_for_update': 500
+    });
     gtag('js', new Date());
     gtag('config', gaTag);
+
+    // Load gtag.js script
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaTag}`;
+
+    const firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(gtagScript, firstScript);
 }
 
 // Game elements for visual interest
