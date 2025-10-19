@@ -1093,64 +1093,52 @@
             <!-- PL -->
             <div class="section-content" data-lang="pl">
                 <div class="partners-grid">
-                    <!-- Sierpc city: Miasto ze smakiem -->
-                    <article class="partner-card">
-                        <div class="partner-top">
+                   <section class="partners-grid">
+                        <article class="partner-card">
                             <div class="partner-logo">
-                                <img src="assets/images/logo-um-sierpc.png" alt="Sierpc - Miasto ze smakiem" />
+                            <img src="assets/images/logo-um-sierpc.png" alt="Sierpc - Miasto ze smakiem" />
                             </div>
-                            <div>
-                                <div class="partner-name">Burmistrz Miasta Sierpca</div>
-                                <div class="partner-desc">Wsparcie lokalne i promocja wydarzenia w regionie.</div>
-                            </div>
-                        </div>
-                        <div class="partner-links">
+                            <div class="partner-name">Burmistrz Miasta Sierpca</div>
+                            <div class="partner-desc">Wsparcie lokalne i promocja wydarzenia w regionie.</div>
+                            <div class="partner-links">
                             <a class="chip" href="https://sierpc.pl/" target="_blank" rel="noopener">sierpc.pl</a>
-                        </div>
-                    </article>
-                    <!-- Powiat Sierpecki: Starostwo -->
-                    <article class="partner-card">
-                        <div class="partner-top">
+                            </div>
+                        </article>
+
+                        <article class="partner-card">
                             <div class="partner-logo">
-                                <img src="assets/images/starostwo.png" alt="Powiat Sierpecki - Starostwo" />
+                            <img src="assets/images/starostwo.png" alt="Powiat Sierpecki - Starostwo" />
                             </div>
-                            <div>
-                                <div class="partner-name">Starostwo Powiatowe w Sierpcu</div>
-                                <div class="partner-desc">Partner instytucjonalny wspierający organizację wydarzenia.</div>
-                            </div>
-                        </div>
-                        <div class="partner-links">
+                            <div class="partner-name">Starostwo Powiatowe w Sierpcu</div>
+                            <div class="partner-desc">Partner instytucjonalny wspierający organizację wydarzenia.</div>
+                            <div class="partner-links">
                             <a class="chip" href="https://powiat.sierpc.pl/" target="_blank" rel="noopener">powiat.sierpc.pl</a>
-                        </div>
-                    </article>
-                    <!-- DevMentor community -->
-                    <article class="partner-card">
-                        <div class="partner-top">
-                            <!-- Podmień na <img src="twoje-logo.svg">, jeśli masz -->
-                            <div class="partner-monogram" aria-hidden="true">DM</div>
-                            <div>
-                                <div class="partner-name">DevMentor — społeczność i mentoring</div>
-                                <div class="partner-desc">Mentoring 1:1, code review i wsparcie w wejściu do IT.</div>
                             </div>
-                        </div>
-                        <div class="partner-links">
-                            <a class="chip" href="https://devmentor.pl/" target="_blank" rel="noopener">devmentor.pl</a>
-                        </div>
-                    </article>
-                    <article class="partner-card">
-                        <div class="partner-top">
+                        </article>
+
+                        <article class="partner-card">
                             <div class="partner-logo">
-                                <img src="assets/images/koneser.png" alt="Koneser Resto Club" />
+                                 <img src="assets/images/mentor.png" alt="Powiat Sierpecki - Starostwo" />
                             </div>
-                            <div>
-                                <div class="partner-name">Koneser Resto Club</div>
-                                <div class="partner-desc">Restauracja w Sierpcu — partner gastronomiczny jamu.</div>
+                            <div class="partner-name">DevMentor — społeczność i mentoring</div>
+                            <div class="partner-desc">Mentoring 1:1, code review i wsparcie w wejściu do IT.</div>
+                            <div class="partner-links">
+                            <a class="chip" href="https://devmentor.pl/" target="_blank" rel="noopener">devmentor.pl</a>
                             </div>
-                        </div>
-                        <div class="partner-links">
+                        </article>
+
+                        <article class="partner-card">
+                            <div class="partner-logo">
+                            <img src="assets/images/koneser.png" alt="Koneser Resto Club" />
+                            </div>
+                            <div class="partner-name">Koneser Resto Club</div>
+                            <div class="partner-desc">Restauracja w Sierpcu — partner gastronomiczny jamu.</div>
+                            <div class="partner-links">
                             <a class="chip" href="https://www.facebook.com/koneserrestoclub/" target="_blank" rel="noopener">Facebook</a>
-                        </div>
-                    </article>
+                            </div>
+                        </article>
+                        </section>
+
 
                     <!-- Museum host -->
                     <!-- <article class="partner-card">
@@ -1459,110 +1447,96 @@
             <p><a href="#" aria-label="Download the rules PDF" data-lang="en">Rules (PDF) — coming soon</a></p>
         </div>
     </footer>
-<style>
-  /* Kolory (łatwo podmienić) */
+
+    <style>
   :root {
-    --bg: #0f172a;           /* tło strony */
-    --card: #0b1224;         /* tło karty */
-    --card-b: #1e293b;       /* obramowanie */
-    --text: #e2e8f0;         /* tekst główny */
-    --muted: #a8b1c7;        /* tekst poboczny */
-    --chip: #2dd4bf;         /* tło chipa */
-    --chip-t: #0b1224;       /* tekst chipa */
+    --bg: #0f172a;
+    --card: #0b1224;
+    --card-b: #1e293b;
+    --text: #e2e8f0;
+    --muted: #a8b1c7;
+    --chip: #2dd4bf;
+    --chip-t: #0b1224;
     --glow: rgba(45, 212, 191, .35);
   }
 
-  /* Siatka na karty */
-  .partners-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
   }
 
-  /* Karta partnera */
-  .partner-card{
-    background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) , var(--card);
-    border:1px solid var(--card-b);
-    border-radius:18px;
-    padding:18px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    min-height:180px;
-    box-shadow:0 0 0 0 var(--glow);
-    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    color:var(--text);
-  }
-  .partner-card:hover{
-    transform:translateY(-2px);
-    border-color:rgba(45,212,191,.6);
-    box-shadow:0 10px 30px -10px var(--glow);
+  .partner-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .01)), var(--card);
+    border: 1px solid var(--card-b);
+    border-radius: 18px;
+    padding: 24px 18px;
+    text-align: center;
+    color: var(--text);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
 
-  /* Górny rząd: logo + tekst */
-  .partner-top{
-    display:flex;
-    gap:14px;
-    align-items:center;
+  .partner-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(45, 212, 191, .6);
+    box-shadow: 0 10px 25px -10px var(--glow);
   }
 
-  /* Kwadrat na logo / monogram */
+  /* Logo u góry */
   .partner-logo,
-  .partner-monogram{
-    width:72px;height:72px; flex:0 0 72px;
-    border-radius:16px;
+  .partner-monogram {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 14px auto;
+    border-radius: 18px;
     background:
-      radial-gradient(120% 120% at 0% 0%, rgba(45,212,191,.25), transparent 60%),
-      radial-gradient(120% 120% at 100% 100%, rgba(59,130,246,.25), transparent 60%),
+      radial-gradient(120% 120% at 0% 0%, rgba(45, 212, 191, .25), transparent 60%),
+      radial-gradient(120% 120% at 100% 100%, rgba(59, 130, 246, .25), transparent 60%),
       #0e1a33;
-    display:grid;place-items:center;
-    overflow:hidden;
-  }
-  .partner-logo img{
-    max-width:80%;
-    max-height:80%;
-    object-fit:contain;
-    image-rendering:auto;
-    filter: drop-shadow(0 1px 0 rgba(255,255,255,.25));
-  }
-  .partner-monogram{
-    font:600 22px/1.1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    color:#e6fffb;
-    letter-spacing:.5px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
   }
 
-  /* Teksty */
-  .partner-name{
-    font:700 17px/1.35 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    margin-bottom:4px;
-  }
-  .partner-desc{
-    font:400 14px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    color:var(--muted);
+  .partner-logo img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
   }
 
-  /* Link-chip na dole */
-  .partner-links{ margin-top:14px; }
-  .partner-links .chip{
-    display:inline-block;
-    padding:6px 12px;
-    border-radius:999px;
-    background:var(--chip);
-    color:var(--chip-t);
-    text-decoration:none;
-    font:600 13px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    box-shadow:0 4px 14px -8px var(--glow);
-    transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  .partner-monogram {
+    font: 700 26px/1 ui-sans-serif, system-ui;
+    color: #e6fffb;
   }
-  .partner-links .chip:hover{ transform:translateY(-1px); filter:brightness(.95); }
 
-  /* Drobne dopieszczenia responsywne */
-  @media (max-width: 420px){
-    .partner-logo,.partner-monogram{ width:60px; height:60px; flex-basis:60px; }
-    .partner-name{ font-weight:700; font-size:16px; }
-    .partner-desc{ font-size:13px; }
+  .partner-name {
+    font: 700 17px/1.3 ui-sans-serif, system-ui;
+    margin-bottom: 6px;
+  }
+
+  .partner-desc {
+    font: 400 14px/1.5 ui-sans-serif, system-ui;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .partner-links .chip {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--chip-t);
+    text-decoration: none;
+    font: 600 13px/1 ui-sans-serif, system-ui;
+    transition: transform .15s ease, filter .15s ease;
+  }
+
+  .partner-links .chip:hover {
+    transform: translateY(-1px);
+    filter: brightness(.95);
   }
 </style>
+
 
     <!-- Scripts -->
     <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
