@@ -1,0 +1,120 @@
+.cookie-consent {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    animation: slideUp 0.5s ease-out;
+}
+
+.cookie-consent.hiding {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+.cookie-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.cookie-icon {
+    font-size: 2rem;
+    animation: bounce 1s ease infinite;
+}
+
+.cookie-text {
+    flex: 1;
+}
+
+.cookie-text h3 {
+    margin: 0 0 0.5rem 0;
+    color: #e2e8f0;
+    font-size: 1.1rem;
+}
+
+.cookie-text p {
+    margin: 0;
+    color: #a8b1c7;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.cookie-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.cookie-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cookie-btn:hover {
+    transform: translateY(-2px);
+}
+
+.accept-btn {
+    background: linear-gradient(135deg, #2dd4bf, #0ea5e9);
+    color: white;
+}
+
+.settings-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #a8b1c7;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Game elements */
+.game-pixel {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #2dd4bf;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+}
