@@ -1115,7 +1115,7 @@
                                 <img src="assets/images/starostwo.png" alt="Powiat Sierpecki - Starostwo" />
                             </div>
                             <div>
-                                <div class="partner-name">Starostwo powiatowe w Sierpcu</div>
+                                <div class="partner-name">Starostwo Powiatowe w Sierpcu</div>
                                 <div class="partner-desc">Partner instytucjonalny wspierający organizację wydarzenia.</div>
                             </div>
                         </div>
@@ -1140,7 +1140,7 @@
                     <article class="partner-card">
                         <div class="partner-top">
                             <div class="partner-logo">
-                                <img src="assets/images/logo-koneser.png" alt="Koneser Resto Club" />
+                                <img src="assets/images/koneser.png" alt="Koneser Resto Club" />
                             </div>
                             <div>
                                 <div class="partner-name">Koneser Resto Club</div>
@@ -1459,6 +1459,110 @@
             <p><a href="#" aria-label="Download the rules PDF" data-lang="en">Rules (PDF) — coming soon</a></p>
         </div>
     </footer>
+<style>
+  /* Kolory (łatwo podmienić) */
+  :root {
+    --bg: #0f172a;           /* tło strony */
+    --card: #0b1224;         /* tło karty */
+    --card-b: #1e293b;       /* obramowanie */
+    --text: #e2e8f0;         /* tekst główny */
+    --muted: #a8b1c7;        /* tekst poboczny */
+    --chip: #2dd4bf;         /* tło chipa */
+    --chip-t: #0b1224;       /* tekst chipa */
+    --glow: rgba(45, 212, 191, .35);
+  }
+
+  /* Siatka na karty */
+  .partners-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+  }
+
+  /* Karta partnera */
+  .partner-card{
+    background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) , var(--card);
+    border:1px solid var(--card-b);
+    border-radius:18px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:180px;
+    box-shadow:0 0 0 0 var(--glow);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    color:var(--text);
+  }
+  .partner-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(45,212,191,.6);
+    box-shadow:0 10px 30px -10px var(--glow);
+  }
+
+  /* Górny rząd: logo + tekst */
+  .partner-top{
+    display:flex;
+    gap:14px;
+    align-items:center;
+  }
+
+  /* Kwadrat na logo / monogram */
+  .partner-logo,
+  .partner-monogram{
+    width:72px;height:72px; flex:0 0 72px;
+    border-radius:16px;
+    background:
+      radial-gradient(120% 120% at 0% 0%, rgba(45,212,191,.25), transparent 60%),
+      radial-gradient(120% 120% at 100% 100%, rgba(59,130,246,.25), transparent 60%),
+      #0e1a33;
+    display:grid;place-items:center;
+    overflow:hidden;
+  }
+  .partner-logo img{
+    max-width:80%;
+    max-height:80%;
+    object-fit:contain;
+    image-rendering:auto;
+    filter: drop-shadow(0 1px 0 rgba(255,255,255,.25));
+  }
+  .partner-monogram{
+    font:600 22px/1.1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    color:#e6fffb;
+    letter-spacing:.5px;
+  }
+
+  /* Teksty */
+  .partner-name{
+    font:700 17px/1.35 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    margin-bottom:4px;
+  }
+  .partner-desc{
+    font:400 14px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    color:var(--muted);
+  }
+
+  /* Link-chip na dole */
+  .partner-links{ margin-top:14px; }
+  .partner-links .chip{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:999px;
+    background:var(--chip);
+    color:var(--chip-t);
+    text-decoration:none;
+    font:600 13px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    box-shadow:0 4px 14px -8px var(--glow);
+    transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  }
+  .partner-links .chip:hover{ transform:translateY(-1px); filter:brightness(.95); }
+
+  /* Drobne dopieszczenia responsywne */
+  @media (max-width: 420px){
+    .partner-logo,.partner-monogram{ width:60px; height:60px; flex-basis:60px; }
+    .partner-name{ font-weight:700; font-size:16px; }
+    .partner-desc{ font-size:13px; }
+  }
+</style>
 
     <!-- Scripts -->
     <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
