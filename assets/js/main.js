@@ -391,10 +391,11 @@ class FAQManager {
 
     bindEvents() {
         this.faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            if (question) {
+            // Find ALL question buttons in each item (both languages)
+            const questions = item.querySelectorAll('.faq-question');
+            questions.forEach(question => {
                 question.addEventListener('click', () => this.toggleFAQ(item));
-            }
+            });
         });
     }
 

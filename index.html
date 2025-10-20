@@ -717,7 +717,7 @@
                                         <div class="included-text">
                                             <h4 data-lang="pl">Wyżywienie</h4>
                                             <h4 data-lang="en">Meals</h4>
-                                            <p data-lang="pl">Śniadania w hotelu oraz dodatkowo cattering od partnera</p>
+                                            <p data-lang="pl">Śniadania w hotelu oraz dodatkowo catering od partnera</p>
                                             <p data-lang="en">Breakfasts at the hotel and, of course, catering from our partner</p>
                                         </div>
                                     </div>
@@ -2060,24 +2060,6 @@
             // Initialize gallery modals (KISS - Keep It Simple, Stupid)
             new SkansenGalleryModal();
             new LukaszGalleryModal();
-            
-            // FAQ Accordion functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                if (question) {
-                    question.addEventListener('click', () => {
-                        // Close all other FAQ items
-                        faqItems.forEach(otherItem => {
-                            if (otherItem !== item) {
-                                otherItem.classList.remove('active');
-                            }
-                        });
-                        // Toggle current item
-                        item.classList.toggle('active');
-                    });
-                }
-            });
         })();
     </script>
 </body>
