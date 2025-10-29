@@ -443,3 +443,63 @@ window.SkansenGameJam = {
     FAQManager,
     Utils
 };
+
+// Mentor Cards 3D Effect Manager
+const MentorCardsManager = {
+    /**
+     * Initialize 3D mouse tracking for mentor cards
+     */
+    init() {
+        const mentorCards = document.querySelectorAll('.mentor-card');
+        
+        mentorCards.forEach(card => {
+            card.addEventListener('mousemove', MentorCardsManager.handleMouseMove);
+            card.addEventListener('mouseleave', MentorCardsManager.handleMouseLeave);
+        });
+    },
+
+    /**
+     * Handle mouse move event for 3D effect
+     */
+    handleMouseMove(e) {
+        const card = e.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+        
+        // Update border glow position
+        const border = card.querySelector('.mentor-card-border');
+        if (border) {
+            const angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI);
+            border.style.background = `linear-gradient(${angle}deg, #60a5fa, #4ade80, #a855f7, #60a5fa)`;
+        }
+    },
+
+    /**
+     * Handle mouse leave event to reset card position
+     */
+    handleMouseLeave(e) {
+        const card = e.currentTarget;
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+    }
+};
+
+// Initialize mentor cards when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        MentorCardsManager.init();
+    });
+} else {
+    MentorCardsManager.init();
+}
+
+// Export MentorCardsManager
+window.MentorCardsManager = MentorCardsManager;
